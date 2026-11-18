@@ -42,6 +42,17 @@ export const nav = [
   { label: "Contact", href: "/contact/" },
 ];
 
+/**
+ * Hero slideshow photos (free to use under the Unsplash Licence; credit is optional but listed in the README).
+ * To change a photo, replace the file in public/hero/ and update the alt text here.
+ */
+export const heroSlides = [
+  { src: "/hero/hero-1.webp", alt: "Two young developers reviewing code together at a shared workspace", label: "Skills" },
+  { src: "/hero/hero-2.webp", alt: "A young professional working on a laptop at a bright desk", label: "Workspace" },
+  { src: "/hero/hero-3.webp", alt: "A team planning together around a whiteboard", label: "Ventures & Community" },
+  { src: "/hero/hero-4.webp", alt: "A rack of networking and server equipment", label: "Connect" },
+];
+
 export const home = {
   hero: {
     eyebrow: "Maiduguri, Borno State · Expanding across Africa",

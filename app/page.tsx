@@ -10,7 +10,7 @@ import PipelineSteps from "@/components/PipelineSteps";
 import SdgBadges from "@/components/SdgBadges";
 import StatsStrip from "@/components/StatsStrip";
 import PartnerCtaBand from "@/components/PartnerCtaBand";
-import PlaceholderImage from "@/components/PlaceholderImage";
+import HeroSlider from "@/components/HeroSlider";
 import Icon from "@/components/Icon";
 import { home, pillars, site, whyChoose } from "@/lib/site-data";
 
@@ -47,25 +47,17 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* TODO: replace with real photo */}
           <div className="relative">
-            <PlaceholderImage onDark />
-            {hero.chips.map((c, i) => (
-              <div
-                key={c.title}
-                className={`absolute flex items-center gap-3 rounded-card bg-white p-3 pr-5 shadow-lg ${
-                  i === 0 ? "-left-2 top-6 sm:-left-6" : "-bottom-4 right-2 sm:-right-4"
-                }`}
-              >
-                <span className="flex h-10 w-10 items-center justify-center rounded-card bg-brand/10 text-brand">
-                  <Icon name={c.icon} className="h-5 w-5" />
-                </span>
-                <span>
-                  <span className="block text-sm font-bold text-brand">{c.title}</span>
-                  <span className="block text-xs text-black/60">{c.sub}</span>
-                </span>
-              </div>
-            ))}
+            <HeroSlider />
+            <div className="absolute -top-4 right-2 flex items-center gap-3 rounded-card bg-white p-3 pr-5 shadow-lg sm:-right-4">
+              <span className="flex h-10 w-10 items-center justify-center rounded-card bg-brand/10 text-brand">
+                <Icon name={hero.chips[0].icon} className="h-5 w-5" />
+              </span>
+              <span>
+                <span className="block text-sm font-bold text-brand">{hero.chips[0].title}</span>
+                <span className="block text-xs text-black/60">{hero.chips[0].sub}</span>
+              </span>
+            </div>
           </div>
         </div>
       </div>
