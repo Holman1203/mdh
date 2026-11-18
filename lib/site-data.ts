@@ -45,6 +45,7 @@ export const nav = [
 export const home = {
   hero: {
     eyebrow: "Maiduguri, Borno State · Expanding across Africa",
+    headline: "Build on Strength",
     title: "Technology, skills and enterprise for Nigeria's next generation of innovators",
     intro:
       "MAMREX HUB builds the dependable infrastructure, training and startup support that North-East Nigeria needs to take part fully in the digital economy.",

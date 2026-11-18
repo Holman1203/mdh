@@ -19,7 +19,7 @@ export default function PartnerPage() {
     <>
       <PageHero {...partner.hero}>
         <Button href="/contact/">Contact Us</Button>
-        <Button href={site.profilePdf} variant="secondary">
+        <Button href={site.profilePdf} variant="light">
           <Download className="h-5 w-5" aria-hidden="true" />
           Download Corporate Profile (PDF)
         </Button>

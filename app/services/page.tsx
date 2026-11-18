@@ -22,11 +22,18 @@ export default function ServicesPage() {
 
       {pillars.map((p, i) => (
         <Section key={p.id} id={p.id} tone={i % 2 === 0 ? "white" : "tint"}>
-          <div className="grid gap-10 lg:grid-cols-3">
+          <div className={`grid items-start gap-10 lg:grid-cols-3 ${i % 2 === 1 ? "lg:[&>div:first-child]:order-last" : ""}`}>
             <div>
-              <span className="mb-4 flex h-14 w-14 items-center justify-center rounded-card bg-brand text-white">
-                <Icon name={p.icon} className="h-7 w-7" />
-              </span>
+              {/* TODO: replace with real photo */}
+              <div
+                role="img"
+                aria-label={`${p.name} illustration`}
+                className="mb-6 flex aspect-[4/3] items-center justify-center rounded-tile bg-brand/10 p-6"
+              >
+                <span className="flex h-full w-full items-center justify-center rounded-tile bg-brand text-white">
+                  <Icon name={p.icon} className="h-16 w-16" />
+                </span>
+              </div>
               <h2 className="font-heading text-3xl font-bold text-brand">{p.name}</h2>
               <p className="mt-2 font-semibold text-black/60">{p.tagline}</p>
             </div>

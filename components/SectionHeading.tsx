@@ -30,6 +30,7 @@ export default function SectionHeading({
       >
         {title}
       </h2>
+      {center && <span className="mx-auto mt-4 block h-1 w-12 rounded-full bg-accent" aria-hidden="true" />}
       {intro && (
         <p className={`mt-4 text-lg leading-relaxed ${onDark ? "text-white/80" : "text-black/70"}`}>
           {intro}

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Download } from "lucide-react";
 import Button from "@/components/Button";
 import Section from "@/components/Section";
 import SectionHeading from "@/components/SectionHeading";
 import FeatureTile from "@/components/FeatureTile";
+import CircleFeature from "@/components/CircleFeature";
+import CtaStrip from "@/components/CtaStrip";
 import PillarCard from "@/components/PillarCard";
 import PipelineSteps from "@/components/PipelineSteps";
 import SdgBadges from "@/components/SdgBadges";
@@ -23,42 +24,36 @@ export default function HomePage() {
   const { hero } = home;
   return (
     <>
-      {/* HERO */}
-      <div className="bg-brand/5">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-2 lg:px-8">
+      {/* HERO — full-width indigo band, uppercase headline, image on the right (after the sample) */}
+      <div className="bg-brand">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-2 lg:px-8">
           <div>
-            <p className="mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-brand">
-              <span className="h-1.5 w-6 rounded-full bg-accent" aria-hidden="true" />
-              {hero.eyebrow}
-            </p>
-            <h1 className="font-heading text-4xl font-extrabold leading-[1.1] text-brand sm:text-5xl">
-              {hero.title}
+            <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/80">{hero.eyebrow}</p>
+            <h1>
+              <span className="block font-heading text-5xl font-extrabold uppercase leading-[1.05] tracking-tight text-white sm:text-6xl">
+                {hero.headline}
+              </span>
+              <span className="mt-4 block h-1 w-14 rounded-full bg-accent" aria-hidden="true" />
+              <span className="mt-4 block font-heading text-lg font-semibold uppercase leading-snug tracking-wide text-white/90 sm:text-xl">
+                {hero.title}
+              </span>
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-black/70">{hero.intro}</p>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/85">{hero.intro}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button href={hero.primaryCta.href}>{hero.primaryCta.label}</Button>
-              <Button href={hero.secondaryCta.href} variant="secondary">
+              <Button href={hero.secondaryCta.href} variant="light">
                 {hero.secondaryCta.label}
               </Button>
             </div>
-            <p className="mt-6">
-              <a
-                href={site.profilePdf}
-                className="inline-flex items-center gap-2 font-semibold text-brand underline underline-offset-4 hover:text-brand/70"
-              >
-                <Download className="h-4 w-4" aria-hidden="true" />
-                Download Corporate Profile (PDF)
-              </a>
-            </p>
           </div>
 
           {/* TODO: replace with real photo */}
           <div className="relative">
-            <PlaceholderImage />
+            <PlaceholderImage onDark />
             {hero.chips.map((c, i) => (
               <div
                 key={c.title}
-                className={`absolute flex items-center gap-3 rounded-card border border-black/10 bg-white p-3 pr-5 shadow-lg ${
+                className={`absolute flex items-center gap-3 rounded-card bg-white p-3 pr-5 shadow-lg ${
                   i === 0 ? "-left-2 top-6 sm:-left-6" : "-bottom-4 right-2 sm:-right-4"
                 }`}
               >
@@ -75,22 +70,22 @@ export default function HomePage() {
         </div>
       </div>
 
-      <StatsStrip />
+      <CtaStrip />
 
-      {/* THREE BARRIERS */}
+      {/* THREE BARRIERS — circular icon features */}
       <Section>
-        <SectionHeading {...home.barriers} title={home.barriers.title} />
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <SectionHeading center eyebrow={home.barriers.eyebrow} title={home.barriers.title} intro={home.barriers.intro} />
+        <div className="mt-12 grid gap-10 md:grid-cols-3">
           {home.barriers.items.map((b) => (
-            <FeatureTile key={b.title} {...b} />
+            <CircleFeature key={b.title} {...b} />
           ))}
         </div>
       </Section>
 
-      {/* FIVE PILLARS */}
+      {/* FIVE PILLARS — "main features" */}
       <Section tone="tint" id="pillars">
-        <SectionHeading {...home.pillars} />
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <SectionHeading center {...home.pillars} />
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {pillars.map((p) => (
             <PillarCard key={p.id} id={p.id} icon={p.icon} name={p.name} tagline={p.tagline} purpose={p.purpose} />
           ))}
@@ -99,26 +94,28 @@ export default function HomePage() {
 
       {/* PIPELINE */}
       <Section>
-        <SectionHeading {...home.pipeline} />
-        <div className="mt-10">
+        <SectionHeading center {...home.pipeline} />
+        <div className="mt-12">
           <PipelineSteps />
         </div>
       </Section>
 
+      <StatsStrip />
+
       {/* WHY CHOOSE US */}
-      <Section tone="dark">
-        <SectionHeading eyebrow={home.why.eyebrow} title={home.why.title} onDark />
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <Section>
+        <SectionHeading center eyebrow={home.why.eyebrow} title={home.why.title} />
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {whyChoose.map((w) => (
-            <FeatureTile key={w.title} {...w} onDark />
+            <FeatureTile key={w.title} {...w} />
           ))}
         </div>
       </Section>
 
       {/* SDGs */}
-      <Section>
-        <SectionHeading {...home.sdg} />
-        <div className="mt-10">
+      <Section tone="tint">
+        <SectionHeading center {...home.sdg} />
+        <div className="mt-12">
           <SdgBadges />
         </div>
       </Section>
