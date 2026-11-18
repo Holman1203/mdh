@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white font-body text-black antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-montserrat), system-ui, sans-serif;
+  }
+  /* Visible focus states (indigo ring with white offset; white ring on dark areas handled by offset) */
+  :focus-visible {
+    outline: 3px solid #120186;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  .bg-brand :focus-visible {
+    outline-color: #FFFFFF;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+}

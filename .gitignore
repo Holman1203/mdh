@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+.env.local
+next-env.d.ts
+*.tsbuildinfo
+
+# Raw profile contains TIN, stamp duty and share capital: keep out of GitHub
+content/mamrex-profile.md
