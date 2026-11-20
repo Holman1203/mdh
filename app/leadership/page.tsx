@@ -25,7 +25,7 @@ export default function LeadershipPage() {
           <div
             role="img"
             aria-label="Placeholder portrait of the founder"
-            className="flex aspect-square items-center justify-center rounded-tile bg-brand font-heading text-7xl font-extrabold text-white"
+            className="flex aspect-square items-center justify-center rounded-tile bg-navy font-heading text-7xl font-extrabold text-snow"
           >
             SH
           </div>

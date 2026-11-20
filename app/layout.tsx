@@ -1,18 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import FloatingActions from "@/components/FloatingActions";
 import { site } from "@/lib/site-data";
 
-const montserrat = Montserrat({
+/** One modern geometric sans-serif for the whole site (headings and body). */
+const sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  variable: "--font-sans",
   display: "swap",
-  weight: ["500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800"],
 });
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -33,21 +34,28 @@ export const metadata: Metadata = {
   icons: { icon: "/logo-icon.png", apple: "/logo-icon.png" },
 };
 
-export const viewport: Viewport = { themeColor: "#120186", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#0A1F44", width: "device-width", initialScale: 1 };
+
+// Applies the saved (or system) theme before first paint to avoid a flash.
+const themeScript = `try{var t=localStorage.getItem('mdh-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={`${montserrat.variable} ${inter.variable}`}>
+    <html lang="en-GB" className={sans.variable} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>
         <a
           href="#main"
-          className="sr-only z-[60] rounded-card bg-white px-4 py-2 font-semibold text-brand focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+          className="sr-only z-[100] rounded-card bg-accent px-4 py-3 font-bold text-navy focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
         >
           Skip to content
         </a>
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        <FloatingActions />
         <JsonLd />
       </body>
     </html>

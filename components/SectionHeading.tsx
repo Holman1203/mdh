@@ -15,26 +15,23 @@ export default function SectionHeading({
     <div className={`max-w-3xl ${center ? "mx-auto text-center" : ""}`}>
       {eyebrow && (
         <p
-          className={`mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider ${
-            onDark ? "text-white" : "text-brand"
-          } ${center ? "justify-center" : ""}`}
+          className={`mb-4 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] ${
+            onDark ? "text-accent" : "text-brand"
+          }`}
         >
-          <span className="h-1.5 w-6 rounded-full bg-accent" aria-hidden="true" />
+          <span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
           {eyebrow}
         </p>
       )}
       <h2
-        className={`font-heading text-3xl font-bold leading-tight sm:text-4xl ${
-          onDark ? "text-white" : "text-brand"
+        className={`text-3xl font-extrabold leading-[1.15] tracking-tight sm:text-4xl lg:text-[2.75rem] ${
+          onDark ? "text-snow" : "text-brand"
         }`}
       >
         {title}
       </h2>
-      {center && <span className="mx-auto mt-4 block h-1 w-12 rounded-full bg-accent" aria-hidden="true" />}
       {intro && (
-        <p className={`mt-4 text-lg leading-relaxed ${onDark ? "text-white/80" : "text-black/70"}`}>
-          {intro}
-        </p>
+        <p className={`mt-5 text-lg leading-relaxed sm:text-xl ${onDark ? "text-snow/80" : "text-black/70"}`}>{intro}</p>
       )}
     </div>
   );

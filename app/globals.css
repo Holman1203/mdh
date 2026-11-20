@@ -2,27 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---------- Theme variables (space-separated RGB so Tailwind opacity works) ---------- */
+:root {
+  --c-white: 255 255 255; /* page surface */
+  --c-black: 17 17 17; /* body text */
+  --c-brand: 10 31 68; /* Deep Navy: headings, links, icons */
+}
+.dark {
+  --c-white: 7 20 46; /* Deep Navy darkened toward black */
+  --c-black: 244 246 250; /* near-white text */
+  --c-brand: 255 255 255;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
   }
   body {
-    @apply bg-white font-body text-black antialiased;
+    @apply bg-white font-body text-[17px] leading-relaxed text-black antialiased;
   }
   h1, h2, h3, h4 {
-    font-family: var(--font-montserrat), system-ui, sans-serif;
+    @apply font-heading tracking-tight;
   }
-  /* Visible focus states (indigo ring with white offset; white ring on dark areas handled by offset) */
+  /* Visible focus: brand ring; white ring on navy areas */
   :focus-visible {
-    outline: 3px solid #120186;
+    outline: 3px solid rgb(var(--c-brand));
     outline-offset: 3px;
     border-radius: 6px;
   }
-  .bg-brand :focus-visible {
-    outline-color: #FFFFFF;
+  .bg-navy :focus-visible,
+  .on-navy :focus-visible {
+    outline-color: #ffffff;
   }
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    * { transition: none !important; }
+  ::selection {
+    background: #ff7a00;
+    color: #0a1f44;
   }
+}
+
+@layer components {
+  /* Faint technical grid used behind navy heroes */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgb(255 255 255 / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at 70% 40%, #000 20%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at 70% 40%, #000 20%, transparent 75%);
+  }
+  /* Single-hue orange glow (no rainbow gradients) */
+  .glow-orange {
+    background: radial-gradient(closest-side, rgb(255 122 0 / 0.35), transparent);
+  }
+  /* Scroll reveal: starts hidden only after JS marks it, so content is never lost without JS */
+  .reveal-ready {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .reveal-ready.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+  .reveal-ready { opacity: 1; transform: none; }
 }

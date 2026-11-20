@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-/** Inner-page hero: full-width indigo band, uppercase title, orange divider (after the sample hero). */
+/** Inner-page hero: Deep Navy with the technical grid and a single orange glow. One H1 per page. */
 export default function PageHero({
   eyebrow,
   title,
@@ -13,21 +13,18 @@ export default function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <div className="relative overflow-hidden bg-brand">
-      {/* decorative rounded squares (logo motif) */}
-      <div className="pointer-events-none absolute -right-10 top-8 hidden gap-3 lg:grid lg:grid-cols-2" aria-hidden="true">
-        <span className="h-32 w-32 rounded-tile bg-white/10" />
-        <span className="h-32 w-32 rounded-tile bg-accent" />
-        <span className="h-32 w-32 rounded-tile bg-white/10" />
-        <span className="h-32 w-32 rounded-tile bg-white/10" />
-      </div>
-      <div className="relative mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-        <p className="text-sm font-semibold uppercase tracking-wider text-white/80">{eyebrow}</p>
-        <h1 className="mt-3 max-w-3xl font-heading text-3xl font-extrabold uppercase leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+    <div className="on-navy relative isolate overflow-hidden bg-navy">
+      <div className="grid-bg absolute inset-0 -z-10" aria-hidden="true" />
+      <div className="glow-orange absolute -right-24 -top-24 -z-10 h-96 w-96" aria-hidden="true" />
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        <p className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-accent">
+          <span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
+          {eyebrow}
+        </p>
+        <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-[1.1] tracking-tight text-snow sm:text-5xl lg:text-6xl">
           {title}
         </h1>
-        <span className="mt-5 block h-1 w-14 rounded-full bg-accent" aria-hidden="true" />
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/85">{intro}</p>
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-snow/85 sm:text-xl">{intro}</p>
         {children && <div className="mt-8 flex flex-wrap gap-3">{children}</div>}
       </div>
     </div>

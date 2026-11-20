@@ -6,24 +6,22 @@ export default function SdgBadges({ onDark = false }: { onDark?: boolean }) {
       {sdgs.map((g) => (
         <li
           key={g.number}
-          className={`flex items-center gap-4 rounded-tile p-5 ${
-            onDark ? "bg-white/10 text-white" : "border border-black/10 bg-white"
+          className={`flex items-center gap-4 rounded-tile p-5 transition-all duration-300 hover:-translate-y-1 ${
+            onDark ? "border border-snow/15 bg-snow/5 text-snow" : "border border-black/10 bg-white shadow-soft"
           }`}
         >
           <span
-            className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-card font-heading text-xl font-extrabold ${
-              onDark ? "bg-white text-brand" : "bg-brand text-white"
+            className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-card text-xl font-extrabold ${
+              onDark ? "bg-accent text-navy" : "bg-navy text-snow"
             }`}
           >
             {g.number}
           </span>
           <span>
-            <span className={`block text-xs font-semibold uppercase tracking-wider ${onDark ? "text-white/80" : "text-black/60"}`}>
+            <span className={`block text-xs font-bold uppercase tracking-wider ${onDark ? "text-snow/80" : "text-black/70"}`}>
               SDG {g.number}
             </span>
-            <span className={`block font-semibold leading-snug ${onDark ? "text-white" : "text-brand"}`}>
-              {g.name}
-            </span>
+            <span className={`block font-semibold leading-snug ${onDark ? "text-snow" : "text-brand"}`}>{g.name}</span>
           </span>
         </li>
       ))}

@@ -30,7 +30,7 @@ export default function ServicesPage() {
                 aria-label={`${p.name} illustration`}
                 className="mb-6 flex aspect-[4/3] items-center justify-center rounded-tile bg-brand/10 p-6"
               >
-                <span className="flex h-full w-full items-center justify-center rounded-tile bg-brand text-white">
+                <span className="flex h-full w-full items-center justify-center rounded-tile bg-navy text-snow">
                   <Icon name={p.icon} className="h-16 w-16" />
                 </span>
               </div>

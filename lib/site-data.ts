@@ -799,3 +799,132 @@ export const contact = {
     ],
   },
 };
+
+/* ------------------------- REDESIGN: NEW SECTIONS ------------------------- */
+
+/** Small facts strip under the hero. All facts come from the corporate profile. */
+export const trustItems = [
+  { icon: "ShieldCheck", title: "CAC registered", sub: "RC 9921354 · Status: Active" },
+  { icon: "FileCheck", title: "NDPA 2023 aligned", sub: "Data protection approach" },
+  { icon: "Target", title: "SDG 4 · 8 · 9 · 17", sub: "Aligned impact goals" },
+  { icon: "MapPin", title: "Maiduguri, Nigeria", sub: "Expanding across Africa" },
+];
+
+/**
+ * Animated counters. These are real facts from the profile (the company was incorporated in October 2026,
+ * so there are no "people trained" or "clients served" results yet).
+ * When you have real results, add them here, e.g. { value: 120, suffix: "+", label: "People trained" }.
+ */
+export const impactNumbers = [
+  { value: 5, suffix: "", label: "Integrated pillars" },
+  { value: 4, suffix: "", label: "Digital service lines" },
+  { value: 4, suffix: "", label: "Planned Academy tracks" },
+  { value: 36, suffix: "", label: "Month roadmap to regional scale" },
+];
+
+export const impactCopy = {
+  eyebrow: "Our foundation in numbers",
+  title: "Built to scale from day one",
+  intro:
+    "MAMREX HUB is newly established, so we report what is real today and will publish results against our indicators as programmes run.",
+};
+
+export const valuesIntro = {
+  eyebrow: "Why Mamrex",
+  title: "Five values behind everything we build",
+};
+
+/** Filterable programme cards. Programmes launch in phases (see Roadmap). */
+export const programmeFilters = ["All", "Academy", "Ventures", "Community", "Workspace"];
+
+export const programmes = [
+  {
+    category: "Academy",
+    icon: "Code2",
+    title: "Web and software development",
+    text: "Practical, project-based training in building websites and software, with a portfolio to show for it.",
+  },
+  {
+    category: "Academy",
+    icon: "Palette",
+    title: "Design",
+    text: "Hands-on design training aligned to what the digital economy actually asks for.",
+  },
+  {
+    category: "Academy",
+    icon: "TrendingUp",
+    title: "Digital marketing",
+    text: "Industry-aligned digital marketing skills through real projects.",
+  },
+  {
+    category: "Academy",
+    icon: "Network",
+    title: "Networking and IT support",
+    text: "Job-ready networking and IT support skills, also available as training for NGO and institutional staff on request.",
+  },
+  {
+    category: "Ventures",
+    icon: "Rocket",
+    title: "Startup incubation",
+    text: "Structured mentorship and business development support to turn validated ideas into investable businesses.",
+  },
+  {
+    category: "Ventures",
+    icon: "Banknote",
+    title: "Funding access",
+    text: "Curated access to funding partners for early-stage founders.",
+  },
+  {
+    category: "Community",
+    icon: "Users",
+    title: "Meetups and events",
+    text: "Regular events that connect developers, designers, founders and students.",
+  },
+  {
+    category: "Community",
+    icon: "Lightbulb",
+    title: "Hackathons",
+    text: "Build-together events that spark collaboration, visibility and opportunity.",
+  },
+  {
+    category: "Community",
+    icon: "Handshake",
+    title: "Founder network",
+    text: "A connected network of founders sharing knowledge, partners and opportunities.",
+  },
+  {
+    category: "Workspace",
+    icon: "Building2",
+    title: "Co-working desks and private spaces",
+    text: "A professional base with reliable power and high-quality internet.",
+  },
+  {
+    category: "Workspace",
+    icon: "Wifi",
+    title: "Flexible memberships",
+    text: "Membership options for freelancers, remote teams and small organisations.",
+  },
+];
+
+/**
+ * TESTIMONIALS — add real ones here and the carousel appears automatically.
+ * Format: { quote: "…", name: "…", role: "…" }. Left empty on purpose: no invented testimonials.
+ */
+export const testimonials: { quote: string; name: string; role: string }[] = [];
+
+/**
+ * PARTNERS — add real partner logos here and the greyscale strip appears automatically.
+ * Format: { name: "Partner name", logo: "/partners/logo.png" } (files go in public/partners/).
+ */
+export const partners: { name: string; logo: string }[] = [];
+
+/**
+ * SOCIAL LINKS — add your real profile URLs and the icons appear in the footer.
+ * Supported icons: "Facebook", "Instagram", "Linkedin", "Twitter", "Youtube".
+ */
+export const socials: { label: string; href: string; icon: string }[] = [];
+
+export const newsletter = {
+  title: "Stay in the loop",
+  text: "Programme news, events and hackathon invitations from MAMREX HUB.",
+};

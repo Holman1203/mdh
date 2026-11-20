@@ -8,13 +8,14 @@ import { heroSlides } from "@/lib/site-data";
 const INTERVAL = 5000;
 
 /**
- * Crossfading hero slideshow. Accessible: pause/play button, dot controls, pauses on hover/focus,
- * and does not auto-play for visitors who prefer reduced motion. Opacity-only CSS transitions.
+ * Crossfading hero slideshow in a framed card. Accessible: pause/play button, dot controls,
+ * pauses on hover/focus, and does not auto-play for visitors who prefer reduced motion.
+ * Photos live in public/hero/ and are listed in lib/site-data.ts (heroSlides).
  */
 export default function HeroSlider() {
   const [index, setIndex] = useState(0);
   const [playing, setPlaying] = useState(true);
-  const [paused, setPaused] = useState(false); // hover / focus pause
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) setPlaying(false);
@@ -37,8 +38,10 @@ export default function HeroSlider() {
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
+      {/* soft orange offset tile behind the photo (logo motif) */}
+      <div className="absolute -bottom-3 -right-3 h-full w-full rounded-tile border-2 border-accent/60" aria-hidden="true" />
       <div
-        className="relative aspect-[4/3] overflow-hidden rounded-tile bg-white/10"
+        className="relative aspect-[4/3] overflow-hidden rounded-tile border border-snow/20 bg-snow/10 shadow-lift"
         aria-live={playing && !paused ? "off" : "polite"}
       >
         {heroSlides.map((s, i) => (
@@ -54,21 +57,22 @@ export default function HeroSlider() {
             className={`object-cover transition-opacity duration-700 ${i === index ? "opacity-100" : "opacity-0"}`}
           />
         ))}
-        <span className="absolute bottom-4 left-4 rounded-card bg-brand px-3 py-1.5 text-sm font-semibold text-white">
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy/70 to-transparent" aria-hidden="true" />
+        <span className="absolute bottom-4 left-4 rounded-card bg-navy px-3 py-1.5 text-sm font-semibold text-snow">
           {heroSlides[index].label}
         </span>
       </div>
 
-      <div className="mt-4 flex items-center gap-3">
+      <div className="mt-5 flex items-center gap-3">
         <button
           type="button"
           onClick={() => setPlaying((p) => !p)}
           aria-label={playing ? "Pause slideshow" : "Play slideshow"}
-          className="flex h-11 w-11 items-center justify-center rounded-card border-2 border-white text-white hover:bg-white/10"
+          className="flex h-11 w-11 items-center justify-center rounded-card border-2 border-snow/70 text-snow transition-all hover:bg-snow/10 active:scale-95"
         >
           {playing ? <Pause className="h-5 w-5" aria-hidden="true" /> : <Play className="h-5 w-5" aria-hidden="true" />}
         </button>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center">
           {heroSlides.map((s, i) => (
             <button
               key={s.src}
@@ -76,9 +80,9 @@ export default function HeroSlider() {
               onClick={() => setIndex(i)}
               aria-label={`Show photo ${i + 1} of ${heroSlides.length}: ${s.label}`}
               aria-current={i === index}
-              className="flex h-11 w-8 items-center justify-center"
+              className="flex h-11 w-9 items-center justify-center"
             >
-              <span className={`block h-2 rounded-full transition-all duration-300 ${i === index ? "w-8 bg-accent" : "w-2 bg-white/60"}`} />
+              <span className={`block h-2 rounded-full transition-all duration-300 ${i === index ? "w-8 bg-accent" : "w-2 bg-snow/60"}`} />
             </button>
           ))}
         </div>

@@ -1,26 +1,51 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone, MessageCircle } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, MessageCircle, Phone, Twitter, Youtube } from "lucide-react";
 import { LogoOnDark } from "./Logo";
-import { nav, site } from "@/lib/site-data";
+import NewsletterForm from "./NewsletterForm";
+import { newsletter, nav, pillars, site, socials } from "@/lib/site-data";
+
+const socialIcons = { Facebook, Instagram, Linkedin, Twitter, Youtube } as const;
+
+const iconBtn =
+  "flex h-11 w-11 items-center justify-center rounded-card border border-snow/25 text-snow transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:text-accent active:scale-95";
 
 export default function Footer() {
   return (
-    <footer className="bg-brand text-white">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3 lg:px-8">
+    <footer className="on-navy bg-navy text-snow">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div>
           <LogoOnDark />
-          <p className="mt-4 font-heading text-lg font-semibold">{site.tagline}</p>
-          <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/80">
+          <p className="mt-5 text-lg font-bold">{site.tagline}</p>
+          <p className="mt-2 max-w-xs text-sm leading-relaxed text-snow/80">
             Technology, skills, enterprise and infrastructure for Nigeria&apos;s next generation of innovators.
           </p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className={iconBtn}>
+              <MessageCircle className="h-5 w-5" aria-hidden="true" />
+            </a>
+            <a href={`mailto:${site.email}`} aria-label="Email us" className={iconBtn}>
+              <Mail className="h-5 w-5" aria-hidden="true" />
+            </a>
+            <a href={`tel:${site.phoneHref}`} aria-label="Call us" className={iconBtn}>
+              <Phone className="h-5 w-5" aria-hidden="true" />
+            </a>
+            {socials.map((s) => {
+              const I = socialIcons[s.icon as keyof typeof socialIcons];
+              return I ? (
+                <a key={s.href} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className={iconBtn}>
+                  <I className="h-5 w-5" aria-hidden="true" />
+                </a>
+              ) : null;
+            })}
+          </div>
         </div>
 
         <nav aria-label="Footer">
-          <h2 className="font-heading text-base font-bold">Quick links</h2>
-          <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm md:grid-cols-1">
+          <h2 className="text-base font-bold">Quick links</h2>
+          <ul className="mt-4 space-y-1 text-sm">
             {nav.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="text-white/80 transition-colors hover:text-white hover:underline">
+                <Link href={item.href} className="inline-flex min-h-[32px] items-center text-snow/80 transition-colors hover:text-accent">
                   {item.label}
                 </Link>
               </li>
@@ -29,37 +54,37 @@ export default function Footer() {
         </nav>
 
         <div>
-          <h2 className="font-heading text-base font-bold">Contact</h2>
-          <ul className="mt-4 space-y-3 text-sm text-white/80">
-            <li className="flex gap-3">
-              <MapPin className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
-              <address className="not-italic">{site.address.full}</address>
-            </li>
-            <li className="flex gap-3">
-              <Mail className="h-5 w-5 shrink-0" aria-hidden="true" />
-              <a href={`mailto:${site.email}`} className="hover:text-white hover:underline">
-                {site.email}
-              </a>
-            </li>
-            <li className="flex gap-3">
-              <Phone className="h-5 w-5 shrink-0" aria-hidden="true" />
-              <a href={`tel:${site.phoneHref}`} className="hover:text-white hover:underline">
-                {site.phone}
-              </a>
-            </li>
-            <li className="flex gap-3">
-              <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
-              <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" className="hover:text-white hover:underline">
-                Chat on WhatsApp
-              </a>
-            </li>
+          <h2 className="text-base font-bold">Services</h2>
+          <ul className="mt-4 space-y-1 text-sm">
+            {pillars.map((p) => (
+              <li key={p.id}>
+                <Link href={`/services/#${p.id}`} className="inline-flex min-h-[32px] items-center text-snow/80 transition-colors hover:text-accent">
+                  {p.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
+
+        <div>
+          <h2 className="text-base font-bold">{newsletter.title}</h2>
+          <p className="mt-2 text-sm text-snow/80">{newsletter.text}</p>
+          <div className="mt-4">
+            <NewsletterForm />
+          </div>
+          <address className="mt-4 flex gap-3 text-sm not-italic text-snow/80">
+            <MapPin className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
+            {site.address.full}
+          </address>
+        </div>
       </div>
-      <div className="border-t border-white/20">
-        <p className="mx-auto max-w-6xl px-4 py-5 text-sm text-white/80 sm:px-6 lg:px-8">
-          © {new Date().getFullYear()} {site.name} ({site.rc}). All rights reserved.
-        </p>
+      <div className="border-t border-snow/15">
+        <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-6 text-sm text-snow/80 sm:flex-row sm:justify-between sm:px-6 lg:px-8">
+          <p>
+            © {new Date().getFullYear()} {site.name} ({site.rc}). All rights reserved.
+          </p>
+          <p>{site.email} · {site.phone}</p>
+        </div>
       </div>
     </footer>
   );

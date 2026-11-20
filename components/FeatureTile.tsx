@@ -1,6 +1,6 @@
 import Icon from "./Icon";
 
-/** Feature tile: 20px corners, echoing the logo's rounded squares. */
+/** Feature tile: 20px corners (echoing the logo's rounded squares), hover lift. */
 export default function FeatureTile({
   icon,
   title,
@@ -14,21 +14,21 @@ export default function FeatureTile({
 }) {
   return (
     <div
-      className={`rounded-tile p-6 transition-shadow duration-200 hover:shadow-lg ${
-        onDark ? "bg-white/10 text-white" : "border border-black/10 bg-white"
+      className={`group rounded-tile p-6 transition-all duration-300 hover:-translate-y-1 ${
+        onDark
+          ? "border border-snow/15 bg-snow/5 text-snow hover:border-accent/60 hover:bg-snow/10"
+          : "border border-black/10 bg-white shadow-soft hover:border-brand/30 hover:shadow-lift"
       }`}
     >
       <span
-        className={`mb-4 flex h-12 w-12 items-center justify-center rounded-card ${
-          onDark ? "bg-white text-brand" : "bg-brand/10 text-brand"
+        className={`mb-5 flex h-12 w-12 items-center justify-center rounded-card transition-transform duration-300 group-hover:scale-105 ${
+          onDark ? "bg-accent text-navy" : "bg-navy text-snow"
         }`}
       >
         <Icon name={icon} />
       </span>
-      <h3 className={`font-heading text-lg font-bold ${onDark ? "text-white" : "text-brand"}`}>
-        {title}
-      </h3>
-      <p className={`mt-2 leading-relaxed ${onDark ? "text-white/80" : "text-black/70"}`}>{text}</p>
+      <h3 className={`text-lg font-bold ${onDark ? "text-snow" : "text-brand"}`}>{title}</h3>
+      <p className={`mt-2 leading-relaxed ${onDark ? "text-snow/80" : "text-black/70"}`}>{text}</p>
     </div>
   );
 }

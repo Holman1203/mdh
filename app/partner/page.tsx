@@ -77,9 +77,9 @@ export default function PartnerPage() {
       </Section>
 
       <Section>
-        <div className="rounded-tile bg-brand px-6 py-12 text-center sm:px-12">
-          <h2 className="font-heading text-3xl font-bold text-white">Start a conversation</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">
+        <div className="rounded-tile bg-navy px-6 py-12 text-center sm:px-12">
+          <h2 className="font-heading text-3xl font-bold text-snow">Start a conversation</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-snow/80">
             Tell us about your priorities and reporting requirements and we will explore how to co-design a programme together.
           </p>
           <div className="mt-8">

@@ -23,7 +23,7 @@ export default function RoadmapPage() {
           {roadmap.phases.map((p, i) => (
             <li key={p.phase} className="relative mb-12 pl-16 last:mb-0 md:grid md:grid-cols-2 md:gap-12 md:pl-0">
               <span
-                className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-card bg-brand font-heading text-lg font-bold text-white md:left-1/2 md:-translate-x-1/2"
+                className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-card bg-navy font-heading text-lg font-bold text-snow md:left-1/2 md:-translate-x-1/2"
                 aria-hidden="true"
               >
                 {i + 1}

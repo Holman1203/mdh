@@ -1,22 +1,29 @@
 import Icon from "./Icon";
 
-/** Centred feature with a circular icon badge (as in the sample's three-column feature row). */
+/** Barrier feature: icon in a navy rounded tile with a number, hover lift. */
 export default function CircleFeature({
   icon,
   title,
   text,
+  index,
 }: {
   icon: string;
   title: string;
   text: string;
+  index?: number;
 }) {
   return (
-    <div className="text-center">
-      <span className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-black/10 bg-white text-brand shadow-sm">
-        <Icon name={icon} className="h-10 w-10" />
+    <div className="group relative rounded-tile border border-black/10 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+      {index !== undefined && (
+        <span className="absolute right-6 top-6 text-5xl font-extrabold text-brand/10" aria-hidden="true">
+          0{index + 1}
+        </span>
+      )}
+      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-navy text-snow ring-4 ring-accent/30">
+        <Icon name={icon} className="h-7 w-7" />
       </span>
-      <h3 className="mt-5 font-heading text-xl font-bold text-brand">{title}</h3>
-      <p className="mx-auto mt-2 max-w-xs leading-relaxed text-black/70">{text}</p>
+      <h3 className="mt-6 text-xl font-bold text-brand">{title}</h3>
+      <p className="mt-2 leading-relaxed text-black/70">{text}</p>
     </div>
   );
 }

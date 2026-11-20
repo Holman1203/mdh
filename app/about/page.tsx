@@ -61,12 +61,12 @@ export default function AboutPage() {
       <Section tone="dark">
         <div className="grid gap-6 md:grid-cols-2">
           {[about.vision, about.mission].map((x) => (
-            <div key={x.label} className="rounded-tile bg-white/10 p-8">
-              <p className="text-sm font-semibold uppercase tracking-wider text-white">
+            <div key={x.label} className="rounded-tile bg-snow/10 p-8">
+              <p className="text-sm font-semibold uppercase tracking-wider text-snow">
                 <span className="mr-2 inline-block h-1.5 w-6 rounded-full bg-accent align-middle" aria-hidden="true" />
                 {x.label}
               </p>
-              <p className="mt-4 font-heading text-xl font-semibold leading-snug text-white sm:text-2xl">{x.text}</p>
+              <p className="mt-4 font-heading text-xl font-semibold leading-snug text-snow sm:text-2xl">{x.text}</p>
             </div>
           ))}
         </div>

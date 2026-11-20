@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-/** Consistent page section: tone = white | tint (brand/5) | dark (indigo). */
+/** Consistent page section: tone = white | tint (soft brand tint) | dark (Deep Navy). */
 export default function Section({
   children,
   tone = "white",
@@ -12,9 +12,10 @@ export default function Section({
   id?: string;
   className?: string;
 }) {
-  const bg = tone === "dark" ? "bg-brand text-white" : tone === "tint" ? "bg-brand/5" : "bg-white";
+  const bg =
+    tone === "dark" ? "on-navy relative overflow-hidden bg-navy text-snow" : tone === "tint" ? "bg-brand/5" : "bg-white";
   return (
-    <section id={id} className={`${bg} py-16 sm:py-20 scroll-mt-20 ${className}`}>
+    <section id={id} className={`${bg} scroll-mt-24 py-16 sm:py-24 ${className}`}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">{children}</div>
     </section>
   );
