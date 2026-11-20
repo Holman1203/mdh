@@ -39,9 +39,15 @@ const config: Config = {
         soft: "0 1px 2px rgb(10 31 68 / 0.06), 0 8px 24px -12px rgb(10 31 68 / 0.18)",
       },
       keyframes: {
+        float: { from: { transform: "translateY(0)" }, to: { transform: "translateY(-12px)" } },
+        drift: { from: { transform: "translate(0,0) scale(1)" }, to: { transform: "translate(60px,-40px) scale(1.15)" } },
         "fade-up": { from: { opacity: "0", transform: "translateY(16px)" }, to: { opacity: "1", transform: "none" } },
       },
-      animation: { "fade-up": "fade-up 0.6s ease-out both" },
+      animation: {
+        "fade-up": "fade-up 0.6s ease-out both",
+        float: "float 6s ease-in-out infinite alternate",
+        drift: "drift 18s ease-in-out infinite alternate",
+      },
     },
   },
   plugins: [],

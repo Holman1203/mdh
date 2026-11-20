@@ -8,7 +8,9 @@ import PillarCard from "@/components/PillarCard";
 import PipelineSteps from "@/components/PipelineSteps";
 import SdgBadges from "@/components/SdgBadges";
 import PartnerCtaBand from "@/components/PartnerCtaBand";
-import HeroSlider from "@/components/HeroSlider";
+import HeroCanvas from "@/components/HeroCanvas";
+import HeroPillars from "@/components/HeroPillars";
+import { ChevronDown } from "lucide-react";
 import TrustStrip from "@/components/TrustStrip";
 import ImpactCounters from "@/components/ImpactCounters";
 import Programmes from "@/components/Programmes";
@@ -27,33 +29,48 @@ export default function HomePage() {
   const { hero } = home;
   return (
     <>
-      {/* 1. HERO — Deep Navy, technical grid, single orange glow, framed photo slideshow */}
-      <div className="on-navy relative isolate overflow-hidden bg-navy">
+      {/* 1. HERO — live animated network background (HeroCanvas), drifting glows, floating pillar cards */}
+      <div className="on-navy relative isolate flex min-h-[calc(100svh-5rem)] items-center overflow-hidden bg-navy">
+        <HeroCanvas />
         <div className="grid-bg absolute inset-0 -z-10" aria-hidden="true" />
-        <div className="glow-orange absolute -right-32 top-0 -z-10 h-[34rem] w-[34rem]" aria-hidden="true" />
-        <div className="mx-auto grid max-w-6xl items-center gap-14 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+        <div className="glow-orange animate-drift absolute -right-32 -top-20 -z-10 h-[38rem] w-[38rem]" aria-hidden="true" />
+        <div className="glow-orange animate-drift absolute -bottom-48 -left-40 -z-10 h-[34rem] w-[34rem] opacity-60 [animation-delay:-9s]" aria-hidden="true" />
+        {/* readability veil behind the text */}
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-navy/85 via-navy/40 to-transparent" aria-hidden="true" />
+
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
           <div className="animate-fade-up">
-            <p className="inline-flex items-center gap-2 rounded-full border border-snow/20 bg-snow/5 px-4 py-1.5 text-sm font-semibold text-snow">
-              <span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
-              {hero.eyebrow}
-            </p>
-            <h1 className="mt-6 text-6xl font-extrabold leading-[0.98] text-snow sm:text-7xl lg:text-[6.5rem]">
+            <p className="text-base font-bold uppercase tracking-[0.2em] text-accent sm:text-lg">{hero.welcome}</p>
+            <h1 className="mt-4 text-7xl leading-[0.92] text-snow sm:text-8xl lg:text-[9rem]">
               {hero.headline.split(" ").slice(0, -1).join(" ")}{" "}
-                <span className="text-accent">{hero.headline.split(" ").slice(-1)}</span>
+              <span className="text-accent">{hero.headline.split(" ").slice(-1)}</span>
             </h1>
-            <p className="mt-4 text-xl font-semibold leading-snug text-accent sm:text-2xl">{hero.title}</p>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-snow/85 sm:text-xl">{hero.intro}</p>
+            <p className="mt-5 max-w-xl text-2xl font-bold leading-snug text-snow sm:text-3xl">{hero.title}</p>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-snow/85 sm:text-xl">{hero.intro}</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button href={hero.primaryCta.href}>{hero.primaryCta.label}</Button>
               <Button href={hero.secondaryCta.href} variant="light">
                 {hero.secondaryCta.label}
               </Button>
             </div>
+            <p className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-snow/90">
+              <span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
+              {hero.eyebrow}
+            </p>
+            <HeroPillars />
           </div>
-          <div className="animate-fade-up [animation-delay:150ms]">
-            <HeroSlider />
+          <div className="hidden animate-fade-up [animation-delay:200ms] lg:block">
+            <HeroPillars desktopOnly />
           </div>
         </div>
+
+        <a
+          href="#services"
+          aria-label="Scroll to our services"
+          className="absolute bottom-5 left-1/2 hidden h-11 w-11 -translate-x-1/2 items-center justify-center rounded-full border border-snow/30 text-snow transition-colors hover:border-accent hover:text-accent sm:flex"
+        >
+          <ChevronDown className="h-5 w-5 animate-bounce" aria-hidden="true" />
+        </a>
       </div>
 
       {/* 2. TRUST STRIP */}

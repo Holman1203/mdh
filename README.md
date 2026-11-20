@@ -42,13 +42,6 @@ Until a real key is set the form shows a polite "not connected yet" message. (Th
 
 Project → Settings → Domains → add your domain and follow the DNS instructions Vercel shows (an `A` record for the root domain and a `CNAME` for `www`). HTTPS is automatic. After the domain is live, set `NEXT_PUBLIC_SITE_URL` to it and redeploy.
 
-## Hero slideshow photos
+## Hero background
 
-The four home-page photos live in `public/hero/` (resized WebP, about 40–60 KB each) and are listed in `lib/site-data.ts` (`heroSlides`). Replace a file and update its alt text to change a photo. They come from Unsplash (free under the Unsplash Licence; credit is optional but appreciated):
-
-- Developers at a workspace: <https://unsplash.com/photos/man-using-black-laptop-computer-kwzWjTnDPLk>
-- Young professional at a desk: <https://unsplash.com/photos/young-woman-smiling-while-working-on-a-laptop-at-desk-UHfJI_lZoPo>
-- Team around a whiteboard: <https://unsplash.com/photos/team-collaborating-around-a-whiteboard-during-a-meeting-rgKX4o2xSqI>
-- Server and network rack: <https://unsplash.com/photos/a-rack-of-servers-in-a-server-room-2JJ3wBHu4_0>
-
-Swap in real photos of your own hub when you have them.
+The home-page hero is a live animated network (`components/HeroCanvas.tsx`, plain canvas, no libraries). It pauses off-screen and shows a still frame for visitors who prefer reduced motion. Edit the pillar cards in `lib/site-data.ts` (`pillars`).
