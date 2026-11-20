@@ -22,7 +22,7 @@ export default function FeatureTile({
     >
       <span
         className={`mb-5 flex h-12 w-12 items-center justify-center rounded-card transition-transform duration-300 group-hover:scale-105 ${
-          onDark ? "bg-accent text-navy" : "bg-navy text-snow"
+          onDark ? "bg-accent text-navy" : "bg-accent text-navy"
         }`}
       >
         <Icon name={icon} />

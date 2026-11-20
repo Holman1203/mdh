@@ -37,8 +37,9 @@ export default function HomePage() {
               <span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
               {hero.eyebrow}
             </p>
-            <h1 className="mt-6 text-5xl font-extrabold leading-[1.05] tracking-tight text-snow sm:text-6xl lg:text-7xl">
-              {hero.headline}
+            <h1 className="mt-6 text-5xl font-extrabold leading-[1.05] text-snow sm:text-6xl lg:text-7xl">
+              {hero.headline.split(" ").slice(0, -1).join(" ")}{" "}
+                <span className="text-accent">{hero.headline.split(" ").slice(-1)}</span>
             </h1>
             <p className="mt-4 text-xl font-semibold leading-snug text-accent sm:text-2xl">{hero.title}</p>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-snow/85 sm:text-xl">{hero.intro}</p>
@@ -132,7 +133,7 @@ export default function HomePage() {
           {about.values.map((v, i) => (
             <Reveal key={v.title} delay={i * 80}>
               <div className="h-full rounded-tile border border-black/10 bg-white p-6 text-center shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
-                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-navy text-snow ring-4 ring-accent/30">
+                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent text-navy ring-4 ring-accent/25">
                   <ValueIcon name={v.icon} />
                 </span>
                 <h3 className="mt-4 text-lg font-bold text-brand">{v.title}</h3>

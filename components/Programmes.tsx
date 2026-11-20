@@ -38,7 +38,7 @@ export default function Programmes() {
             className="group flex flex-col rounded-tile border border-black/10 bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-lift"
           >
             <div className="flex items-center justify-between">
-              <span className="flex h-12 w-12 items-center justify-center rounded-card bg-navy text-snow">
+              <span className="flex h-12 w-12 items-center justify-center rounded-card bg-accent text-navy">
                 <Icon name={p.icon} />
               </span>
               <span className="rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">

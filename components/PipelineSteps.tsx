@@ -8,7 +8,7 @@ export default function PipelineSteps() {
           key={s.title}
           className="relative rounded-tile border border-black/10 bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
         >
-          <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-card bg-navy text-lg font-extrabold text-snow">
+          <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-card bg-accent text-lg font-extrabold text-navy">
             {i + 1}
           </span>
           <h3 className="text-lg font-bold text-brand">{s.title}</h3>

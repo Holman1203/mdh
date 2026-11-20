@@ -26,7 +26,7 @@
     @apply bg-white font-body text-[17px] leading-relaxed text-black antialiased;
   }
   h1, h2, h3, h4 {
-    @apply font-heading tracking-tight;
+    @apply font-heading;
   }
   /* Visible focus: brand ring; white ring on navy areas */
   :focus-visible {
@@ -56,7 +56,7 @@
   }
   /* Single-hue orange glow (no rainbow gradients) */
   .glow-orange {
-    background: radial-gradient(closest-side, rgb(255 122 0 / 0.35), transparent);
+    background: radial-gradient(closest-side, rgb(255 122 0 / 0.5), transparent);
   }
   /* Scroll reveal: starts hidden only after JS marks it, so content is never lost without JS */
   .reveal-ready {

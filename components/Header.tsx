@@ -110,7 +110,7 @@ export default function Header() {
           }`}
         >
           <div className="flex items-center justify-between">
-            <span className="text-lg font-extrabold tracking-tight">{site.shortName}</span>
+            <span className="text-lg font-extrabold">{site.shortName}</span>
             <button
               ref={closeRef}
               type="button"

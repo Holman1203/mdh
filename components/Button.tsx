@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 type Props = {
   href: string;
   children: ReactNode;
-  variant?: "primary" | "secondary" | "light";
+  variant?: "primary" | "secondary" | "light" | "navy" | "navyOutline";
   external?: boolean;
   className?: string;
 };
@@ -17,9 +17,13 @@ type Props = {
  */
 const styles = {
   primary:
-    "border-2 border-accent bg-accent font-bold text-navy shadow-soft hover:-translate-y-0.5 hover:bg-accent/90 hover:shadow-lift active:translate-y-0 active:scale-[0.98]",
+    "border-2 border-accent bg-accent font-bold text-navy shadow-[0_10px_28px_-10px_rgb(255_122_0/0.75)] hover:-translate-y-0.5 hover:bg-accent/90 hover:shadow-[0_14px_32px_-10px_rgb(255_122_0/0.9)] active:translate-y-0 active:scale-[0.98]",
   secondary:
     "border-2 border-brand font-semibold text-brand hover:-translate-y-0.5 hover:bg-brand/10 active:translate-y-0 active:scale-[0.98]",
+  navy:
+    "border-2 border-navy bg-navy font-bold text-snow shadow-lift hover:-translate-y-0.5 hover:bg-navy/90 active:translate-y-0 active:scale-[0.98]",
+  navyOutline:
+    "border-2 border-navy font-semibold text-navy hover:-translate-y-0.5 hover:bg-navy/10 active:translate-y-0 active:scale-[0.98]",
   light:
     "border-2 border-snow/80 font-semibold text-snow hover:-translate-y-0.5 hover:bg-snow/10 active:translate-y-0 active:scale-[0.98]",
 };

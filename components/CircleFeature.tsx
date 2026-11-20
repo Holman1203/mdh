@@ -19,7 +19,7 @@ export default function CircleFeature({
           0{index + 1}
         </span>
       )}
-      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-navy text-snow ring-4 ring-accent/30">
+      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-accent text-navy ring-4 ring-accent/25">
         <Icon name={icon} className="h-7 w-7" />
       </span>
       <h3 className="mt-6 text-xl font-bold text-brand">{title}</h3>

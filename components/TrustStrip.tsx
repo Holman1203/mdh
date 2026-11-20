@@ -8,7 +8,7 @@ export default function TrustStrip() {
       <ul className="mx-auto grid max-w-6xl grid-cols-1 gap-x-6 gap-y-5 px-4 py-8 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
         {trustItems.map((t) => (
           <li key={t.title} className="flex items-center gap-3">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-card bg-brand/10 text-brand">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-card bg-accent/20 text-brand">
               <Icon name={t.icon} className="h-5 w-5" />
             </span>
             <span>

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,12 +7,18 @@ import JsonLd from "@/components/JsonLd";
 import FloatingActions from "@/components/FloatingActions";
 import { site } from "@/lib/site-data";
 
-/** One modern geometric sans-serif for the whole site (headings and body). */
-const sans = Plus_Jakarta_Sans({
+/** Classy serif for headings + clean modern sans for body text. */
+const display = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+  weight: ["600", "700", "800"],
+});
+const sans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -41,7 +47,7 @@ const themeScript = `try{var t=localStorage.getItem('mdh-theme');if(t==='dark'||
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={sans.variable} suppressHydrationWarning>
+    <html lang="en-GB" className={`${display.variable} ${sans.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>

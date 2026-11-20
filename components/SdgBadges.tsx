@@ -12,7 +12,7 @@ export default function SdgBadges({ onDark = false }: { onDark?: boolean }) {
         >
           <span
             className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-card text-xl font-extrabold ${
-              onDark ? "bg-accent text-navy" : "bg-navy text-snow"
+              onDark ? "bg-accent text-navy" : "bg-accent text-navy"
             }`}
           >
             {g.number}

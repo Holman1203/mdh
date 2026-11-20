@@ -11,7 +11,7 @@ const iconBtn =
 
 export default function Footer() {
   return (
-    <footer className="on-navy bg-navy text-snow">
+    <footer className="on-navy border-t-4 border-accent bg-navy text-snow">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div>
           <LogoOnDark />

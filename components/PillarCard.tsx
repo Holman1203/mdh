@@ -20,7 +20,7 @@ export default function PillarCard({
       href={`/services/#${id}`}
       className="group flex h-full flex-col rounded-tile border border-black/10 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:border-brand/30 hover:shadow-lift active:translate-y-0"
     >
-      <span className="mb-6 flex h-14 w-14 items-center justify-center rounded-card bg-navy text-snow transition-colors duration-300 group-hover:bg-accent group-hover:text-navy">
+      <span className="mb-6 flex h-14 w-14 items-center justify-center rounded-card bg-accent text-navy transition-colors duration-300 group-hover:bg-navy group-hover:text-snow">
         <Icon name={icon} className="h-7 w-7" />
       </span>
       <h3 className="text-xl font-bold text-brand">{name}</h3>
