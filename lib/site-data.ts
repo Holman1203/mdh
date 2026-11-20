@@ -918,3 +918,17 @@ export const newsletter = {
   title: "Stay in the loop",
   text: "Programme news, events and hackathon invitations from MAMREX HUB.",
 };
+
+/**
+ * HERO BACKGROUND — African / Nigerian young people in learning and tech (free Unsplash photos, links in the README).
+ * The hero fades slowly from one photo to the next on its own. Replace files in public/hero/ and edit this list.
+ * pos = which part of the photo stays visible when it is cropped (CSS object-position).
+ */
+export const heroSlides = [
+  { src: "/hero/hero.webp", pos: "65% center", alt: "Young Nigerian developers working together at a shared workspace in Lagos" },
+  { src: "/hero/hero-man.webp", pos: "58% 30%", alt: "A smiling young Nigerian man holding a laptop" },
+  { src: "/hero/hero-children.webp", pos: "70% center", alt: "School pupils learning in a classroom in Lagos, Nigeria" },
+  { src: "/hero/hero-woman.webp", pos: "65% center", alt: "A young African woman smiling at her laptop at work" },
+  { src: "/hero/hero-couple.webp", pos: "65% center", alt: "Two young African professionals looking at a laptop together" },
+  { src: "/hero/hero-headphones.webp", pos: "62% 35%", alt: "A smiling young African woman with headphones at her workplace" },
+];

@@ -8,9 +8,7 @@ import PillarCard from "@/components/PillarCard";
 import PipelineSteps from "@/components/PipelineSteps";
 import SdgBadges from "@/components/SdgBadges";
 import PartnerCtaBand from "@/components/PartnerCtaBand";
-import HeroCanvas from "@/components/HeroCanvas";
-import Image from "next/image";
-import { ChevronDown } from "lucide-react";
+import HeroScene from "@/components/HeroScene";
 import TrustStrip from "@/components/TrustStrip";
 import ImpactCounters from "@/components/ImpactCounters";
 import Programmes from "@/components/Programmes";
@@ -29,49 +27,21 @@ export default function HomePage() {
   const { hero } = home;
   return (
     <>
-      {/* 1. HERO — simple and calm: one tech photo, live network overlay, welcome line, headline, one-line subtitle, two buttons */}
-      <div className="on-navy relative isolate flex min-h-[calc(100svh-5rem)] items-center overflow-hidden bg-navy">
-        {/* TODO: replace with your own photo of the hub when you have one (public/hero/hero.webp) */}
-        <Image
-          src="/hero/hero.webp"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="-z-20 object-cover object-[65%_center]"
-        />
-        {/* navy veil keeps the text readable and ties the photo to the brand */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/85 to-navy/35" aria-hidden="true" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-navy/70 via-transparent to-transparent" aria-hidden="true" />
-        <div className="opacity-70">
-          <HeroCanvas />
+      {/* 1. HERO — dynamic: cursor-reactive photo, photo tiles that change the background, live network */}
+      <HeroScene>
+        <p className="text-base font-bold uppercase tracking-[0.2em] text-accent sm:text-lg">{hero.welcome}</p>
+        <h1 className="mt-4 text-7xl leading-[0.92] text-snow sm:text-8xl lg:text-[9rem]">
+          {hero.headline.split(" ").slice(0, -1).join(" ")}{" "}
+          <span className="text-accent">{hero.headline.split(" ").slice(-1)}</span>
+        </h1>
+        <p className="mt-6 text-2xl font-bold leading-snug text-snow sm:text-3xl">{hero.title}</p>
+        <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <Button href={hero.primaryCta.href}>{hero.primaryCta.label}</Button>
+          <Button href={hero.secondaryCta.href} variant="light">
+            {hero.secondaryCta.label}
+          </Button>
         </div>
-
-        <div className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
-          <div className="max-w-2xl animate-fade-up">
-            <p className="text-base font-bold uppercase tracking-[0.2em] text-accent sm:text-lg">{hero.welcome}</p>
-            <h1 className="mt-4 text-7xl leading-[0.92] text-snow sm:text-8xl lg:text-[9rem]">
-              {hero.headline.split(" ").slice(0, -1).join(" ")}{" "}
-              <span className="text-accent">{hero.headline.split(" ").slice(-1)}</span>
-            </h1>
-            <p className="mt-6 text-2xl font-bold leading-snug text-snow sm:text-3xl">{hero.title}</p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Button href={hero.primaryCta.href}>{hero.primaryCta.label}</Button>
-              <Button href={hero.secondaryCta.href} variant="light">
-                {hero.secondaryCta.label}
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        <a
-          href="#services"
-          aria-label="Scroll to our services"
-          className="absolute bottom-5 left-1/2 hidden h-11 w-11 -translate-x-1/2 items-center justify-center rounded-full border border-snow/30 text-snow transition-colors hover:border-accent hover:text-accent sm:flex"
-        >
-          <ChevronDown className="h-5 w-5 animate-bounce" aria-hidden="true" />
-        </a>
-      </div>
+      </HeroScene>
 
       {/* 2. TRUST STRIP */}
       <TrustStrip />

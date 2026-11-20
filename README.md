@@ -44,4 +44,15 @@ Project → Settings → Domains → add your domain and follow the DNS instruct
 
 ## Hero
 
-The home-page hero is one tech photo (`public/hero/hero.webp`, free Unsplash photo of developers working: <https://unsplash.com/photos/man-using-black-laptop-computer-kwzWjTnDPLk>) with a faint live animated network over it (`components/HeroCanvas.tsx`, plain canvas, pauses off-screen, still frame for reduced motion). Swap in your own photo by replacing the file. The welcome line, headline and subtitle are in `lib/site-data.ts` (`home.hero`).
+The home-page hero fades slowly between six photos of young African and Nigerian people in learning and tech, with a gentle slow zoom, entirely on its own: it does not react to the mouse. A small button pauses it, and visitors who prefer reduced motion see a still photo. The code is `components/HeroScene.tsx`; the photos and captions are in `lib/site-data.ts` (`heroSlides`) and `public/hero/`.
+
+Photos (free under the Unsplash Licence; credit is optional):
+
+- Developers in Lagos: <https://unsplash.com/photos/man-using-black-laptop-computer-kwzWjTnDPLk>
+- Young man with a laptop (Asaba, Nigeria): <https://unsplash.com/photos/2kyMYSkI5ys>
+- School pupils in Lagos: <https://unsplash.com/photos/jEEYZsaxbH4>
+- Young woman at her laptop: <https://unsplash.com/photos/young-woman-smiling-while-working-on-a-laptop-at-desk-UHfJI_lZoPo>
+- Couple with a laptop: <https://unsplash.com/photos/a-man-and-a-woman-are-looking-at-a-laptop-KljeL88lgkk>
+- Young woman with headphones: <https://unsplash.com/photos/a-woman-sitting-in-front-of-a-laptop-computer-r2fZ65O6lWY>
+
+Swap in real photos of your own hub when you have them.
