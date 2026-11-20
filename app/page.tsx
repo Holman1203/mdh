@@ -9,7 +9,7 @@ import PipelineSteps from "@/components/PipelineSteps";
 import SdgBadges from "@/components/SdgBadges";
 import PartnerCtaBand from "@/components/PartnerCtaBand";
 import HeroCanvas from "@/components/HeroCanvas";
-import HeroPillars from "@/components/HeroPillars";
+import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import TrustStrip from "@/components/TrustStrip";
 import ImpactCounters from "@/components/ImpactCounters";
@@ -29,38 +29,38 @@ export default function HomePage() {
   const { hero } = home;
   return (
     <>
-      {/* 1. HERO — live animated network background (HeroCanvas), drifting glows, floating pillar cards */}
+      {/* 1. HERO — simple and calm: one tech photo, live network overlay, welcome line, headline, one-line subtitle, two buttons */}
       <div className="on-navy relative isolate flex min-h-[calc(100svh-5rem)] items-center overflow-hidden bg-navy">
-        <HeroCanvas />
-        <div className="grid-bg absolute inset-0 -z-10" aria-hidden="true" />
-        <div className="glow-orange animate-drift absolute -right-32 -top-20 -z-10 h-[38rem] w-[38rem]" aria-hidden="true" />
-        <div className="glow-orange animate-drift absolute -bottom-48 -left-40 -z-10 h-[34rem] w-[34rem] opacity-60 [animation-delay:-9s]" aria-hidden="true" />
-        {/* readability veil behind the text */}
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-navy/85 via-navy/40 to-transparent" aria-hidden="true" />
+        {/* TODO: replace with your own photo of the hub when you have one (public/hero/hero.webp) */}
+        <Image
+          src="/hero/hero.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="-z-20 object-cover object-[65%_center]"
+        />
+        {/* navy veil keeps the text readable and ties the photo to the brand */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/85 to-navy/35" aria-hidden="true" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-navy/70 via-transparent to-transparent" aria-hidden="true" />
+        <div className="opacity-70">
+          <HeroCanvas />
+        </div>
 
-        <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
-          <div className="animate-fade-up">
+        <div className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+          <div className="max-w-2xl animate-fade-up">
             <p className="text-base font-bold uppercase tracking-[0.2em] text-accent sm:text-lg">{hero.welcome}</p>
             <h1 className="mt-4 text-7xl leading-[0.92] text-snow sm:text-8xl lg:text-[9rem]">
               {hero.headline.split(" ").slice(0, -1).join(" ")}{" "}
               <span className="text-accent">{hero.headline.split(" ").slice(-1)}</span>
             </h1>
-            <p className="mt-5 max-w-xl text-2xl font-bold leading-snug text-snow sm:text-3xl">{hero.title}</p>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-snow/85 sm:text-xl">{hero.intro}</p>
+            <p className="mt-6 text-2xl font-bold leading-snug text-snow sm:text-3xl">{hero.title}</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button href={hero.primaryCta.href}>{hero.primaryCta.label}</Button>
               <Button href={hero.secondaryCta.href} variant="light">
                 {hero.secondaryCta.label}
               </Button>
             </div>
-            <p className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-snow/90">
-              <span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
-              {hero.eyebrow}
-            </p>
-            <HeroPillars />
-          </div>
-          <div className="hidden animate-fade-up [animation-delay:200ms] lg:block">
-            <HeroPillars desktopOnly />
           </div>
         </div>
 
