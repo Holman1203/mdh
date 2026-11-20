@@ -33,7 +33,7 @@ export default function RoadmapPage() {
                   <Clock className="h-4 w-4" aria-hidden="true" />
                   {p.time}
                 </p>
-                <h2 className="mt-2 font-heading text-2xl font-bold text-brand">
+                <h2 className="mt-2 font-heading text-4xl font-bold text-brand">
                   {p.phase} — {p.name}
                 </h2>
                 <p className="mt-1 font-semibold text-black/70">{p.goal}</p>

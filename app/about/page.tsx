@@ -45,7 +45,7 @@ export default function AboutPage() {
             </div>
           </div>
           <div>
-            <h2 className="font-heading text-2xl font-bold text-brand">{about.glanceTitle}</h2>
+            <h2 className="font-heading text-4xl font-bold text-brand">{about.glanceTitle}</h2>
             <dl className="mt-6 divide-y divide-black/10 rounded-tile border border-black/10">
               {about.glance.map(([k, v]) => (
                 <div key={k} className="grid gap-1 p-4 sm:grid-cols-3 sm:gap-4">
@@ -66,7 +66,7 @@ export default function AboutPage() {
                 <span className="mr-2 inline-block h-1.5 w-6 rounded-full bg-accent align-middle" aria-hidden="true" />
                 {x.label}
               </p>
-              <p className="mt-4 font-heading text-xl font-semibold leading-snug text-snow sm:text-2xl">{x.text}</p>
+              <p className="mt-4 font-heading text-3xl leading-snug text-snow sm:text-4xl">{x.text}</p>
             </div>
           ))}
         </div>
@@ -92,7 +92,7 @@ export default function AboutPage() {
           ))}
         </div>
         <p className="mt-8 max-w-3xl text-lg leading-relaxed text-black/80">{about.philosophyBody}</p>
-        <p className="mt-6 font-heading text-2xl font-bold text-brand">Build on Strength.</p>
+        <p className="mt-6 font-heading text-4xl font-bold text-brand">Build on Strength.</p>
       </Section>
 
       <PartnerCtaBand />

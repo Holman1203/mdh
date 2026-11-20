@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Playfair_Display } from "next/font/google";
+import { Lato, League_Gothic } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,18 +7,17 @@ import JsonLd from "@/components/JsonLd";
 import FloatingActions from "@/components/FloatingActions";
 import { site } from "@/lib/site-data";
 
-/** Classy serif for headings + clean modern sans for body text. */
-const display = Playfair_Display({
+/** Tall condensed display face for headings (League Gothic) + clean humanist sans for body text (Lato). */
+const display = League_Gothic({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
-  weight: ["600", "700", "800"],
 });
-const sans = DM_Sans({
+const sans = Lato({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "700", "900"],
 });
 
 export const metadata: Metadata = {

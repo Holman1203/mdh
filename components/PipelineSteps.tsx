@@ -11,7 +11,7 @@ export default function PipelineSteps() {
           <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-card bg-accent text-lg font-extrabold text-navy">
             {i + 1}
           </span>
-          <h3 className="text-lg font-bold text-brand">{s.title}</h3>
+          <h3 className="text-2xl font-bold text-brand">{s.title}</h3>
           <p className="mt-2 text-sm leading-relaxed text-black/70">{s.text}</p>
           {i < pipelineSteps.length - 1 && (
             <span className="absolute -right-3 top-10 hidden h-0.5 w-6 bg-accent lg:block" aria-hidden="true" />

@@ -42,7 +42,7 @@ export default function ContactPage() {
       <Section>
         <div className="grid gap-12 lg:grid-cols-2">
           <div>
-            <h2 className="font-heading text-2xl font-bold text-brand">{site.name}</h2>
+            <h2 className="font-heading text-4xl font-bold text-brand">{site.name}</h2>
             <p className="mt-1 text-black/60">{site.rc}</p>
             <ul className="mt-6 space-y-5">
               {rows.map(({ icon: I, label, node }) => (
@@ -69,7 +69,7 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <h2 className="font-heading text-2xl font-bold text-brand">{contact.form.title}</h2>
+            <h2 className="font-heading text-4xl font-bold text-brand">{contact.form.title}</h2>
             <div className="mt-6">
               <ContactForm />
             </div>
@@ -78,7 +78,7 @@ export default function ContactPage() {
       </Section>
 
       <Section tone="tint">
-        <h2 className="font-heading text-2xl font-bold text-brand">Find us</h2>
+        <h2 className="font-heading text-4xl font-bold text-brand">Find us</h2>
         <p className="mt-2 text-black/70">{site.address.full}</p>
         <div className="mt-6 overflow-hidden rounded-tile border border-black/10">
           <iframe

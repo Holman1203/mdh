@@ -45,7 +45,7 @@ export default function Programmes() {
                 {p.category}
               </span>
             </div>
-            <h3 className="mt-5 text-lg font-bold text-brand">{p.title}</h3>
+            <h3 className="mt-5 text-2xl font-bold text-brand">{p.title}</h3>
             <p className="mt-2 flex-1 text-black/70">{p.text}</p>
             <Link
               href="/contact/"

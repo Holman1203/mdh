@@ -50,7 +50,7 @@ export default function ResponsiveTable({
       <ul className="space-y-4 md:hidden">
         {rows.map((row) => (
           <li key={row[0]} className="rounded-tile border border-black/10 bg-white p-5 shadow-soft">
-            <h3 className="text-lg font-bold text-brand">{row[0]}</h3>
+            <h3 className="text-2xl font-bold text-brand">{row[0]}</h3>
             <dl className="mt-3 space-y-3">
               {row.slice(1).map((cell, j) => (
                 <div key={j}>

@@ -37,7 +37,7 @@ export default function HomePage() {
               <span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
               {hero.eyebrow}
             </p>
-            <h1 className="mt-6 text-5xl font-extrabold leading-[1.05] text-snow sm:text-6xl lg:text-7xl">
+            <h1 className="mt-6 text-6xl font-extrabold leading-[0.98] text-snow sm:text-7xl lg:text-[6.5rem]">
               {hero.headline.split(" ").slice(0, -1).join(" ")}{" "}
                 <span className="text-accent">{hero.headline.split(" ").slice(-1)}</span>
             </h1>
@@ -86,7 +86,7 @@ export default function HomePage() {
           ))}
         </div>
         <Reveal>
-          <h3 className="mt-16 text-2xl font-extrabold text-brand">Also from our digital services arm</h3>
+          <h3 className="mt-16 text-3xl font-extrabold text-brand">Also from our digital services arm</h3>
         </Reveal>
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {services.arm.items.map((x, i) => (
@@ -118,7 +118,7 @@ export default function HomePage() {
             <ImpactCounters />
           </div>
           <div className="mt-14">
-            <h3 className="mb-6 text-xl font-bold text-snow">Aligned with the Sustainable Development Goals</h3>
+            <h3 className="mb-6 text-3xl font-bold text-snow">Aligned with the Sustainable Development Goals</h3>
             <SdgBadges onDark />
           </div>
         </div>
@@ -136,7 +136,7 @@ export default function HomePage() {
                 <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent text-navy ring-4 ring-accent/25">
                   <ValueIcon name={v.icon} />
                 </span>
-                <h3 className="mt-4 text-lg font-bold text-brand">{v.title}</h3>
+                <h3 className="mt-4 text-2xl font-bold text-brand">{v.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-black/70">{v.text}</p>
               </div>
             </Reveal>

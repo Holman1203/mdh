@@ -29,7 +29,7 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        heading: ["var(--font-display)", "Georgia", "serif"],
+        heading: ["var(--font-display)", "Impact", "Arial Narrow", "sans-serif"],
         body: ["var(--font-sans)", "system-ui", "sans-serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },

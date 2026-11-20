@@ -47,7 +47,7 @@ export default function ImpactCounters() {
       {impactNumbers.map((n) => (
         <div key={n.label} className="flex flex-col rounded-tile border border-snow/15 bg-snow/5 p-6">
           <dt className="order-2 mt-2 text-sm font-medium text-snow/80">{n.label}</dt>
-          <dd className="text-5xl font-extrabold text-accent sm:text-6xl">
+          <dd className="font-heading text-6xl text-accent sm:text-7xl">
             <Counter value={n.value} suffix={n.suffix} />
           </dd>
           <span className="order-3 mt-4 h-1 w-10 rounded-full bg-accent" aria-hidden="true" />

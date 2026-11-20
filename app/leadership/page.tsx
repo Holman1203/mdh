@@ -34,7 +34,7 @@ export default function LeadershipPage() {
               <span className="h-1.5 w-6 rounded-full bg-accent" aria-hidden="true" />
               {f.role}
             </p>
-            <h2 className="font-heading text-3xl font-bold text-brand">{f.name}</h2>
+            <h2 className="font-heading text-5xl font-bold text-brand">{f.name}</h2>
             <p className="mt-5 text-lg leading-relaxed text-black/80">{f.bio}</p>
           </div>
         </div>
@@ -44,7 +44,7 @@ export default function LeadershipPage() {
             <Users className="h-6 w-6" aria-hidden="true" />
           </span>
           <div>
-            <h3 className="font-heading text-lg font-bold text-brand">{leadership.advisory.title} — to be announced</h3>
+            <h3 className="font-heading text-4xl font-bold text-brand">{leadership.advisory.title} — to be announced</h3>
             <p className="mt-1 text-black/80">{leadership.advisory.text}</p>
           </div>
         </div>

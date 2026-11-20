@@ -12,7 +12,7 @@ export default function PartnerCtaBand() {
           <span className="absolute -left-10 -top-10 -z-10 h-40 w-40 rounded-tile bg-navy/10" aria-hidden="true" />
           <span className="absolute -bottom-12 -right-8 -z-10 h-48 w-48 rounded-tile bg-navy/10" aria-hidden="true" />
           <span className="absolute bottom-10 left-1/4 -z-10 hidden h-16 w-16 rounded-card bg-snow/25 sm:block" aria-hidden="true" />
-          <h2 className="mx-auto max-w-3xl text-3xl font-extrabold text-navy sm:text-5xl">{home.cta.title}</h2>
+          <h2 className="mx-auto max-w-3xl text-4xl font-extrabold text-navy sm:text-6xl">{home.cta.title}</h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg font-medium leading-relaxed text-navy/90">{home.cta.text}</p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button href="/partner/" variant="navy">
