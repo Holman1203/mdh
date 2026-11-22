@@ -13,7 +13,7 @@ export default function CircleFeature({
   index?: number;
 }) {
   return (
-    <div className="group relative rounded-tile border border-black/10 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+    <div className="group relative h-full rounded-tile border border-black/10 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
       {index !== undefined && (
         <span className="absolute right-6 top-6 text-5xl font-extrabold text-brand/10" aria-hidden="true">
           0{index + 1}

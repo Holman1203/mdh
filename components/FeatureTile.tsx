@@ -14,7 +14,7 @@ export default function FeatureTile({
 }) {
   return (
     <div
-      className={`group rounded-tile p-6 transition-all duration-300 hover:-translate-y-1 ${
+      className={`group h-full rounded-tile p-6 transition-all duration-300 hover:-translate-y-1 ${
         onDark
           ? "border border-snow/15 bg-snow/5 text-snow hover:border-accent/60 hover:bg-snow/10"
           : "border border-black/10 bg-white shadow-soft hover:border-brand/30 hover:shadow-lift"
@@ -27,7 +27,7 @@ export default function FeatureTile({
       >
         <Icon name={icon} />
       </span>
-      <h3 className={`text-2xl font-bold ${onDark ? "text-snow" : "text-brand"}`}>{title}</h3>
+      <h3 className={`text-3xl font-bold tracking-wide ${onDark ? "text-snow" : "text-brand"}`}>{title}</h3>
       <p className={`mt-2 leading-relaxed ${onDark ? "text-snow/80" : "text-black/70"}`}>{text}</p>
     </div>
   );

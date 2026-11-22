@@ -9,7 +9,7 @@ import { useEffect, useRef, type ReactNode } from "react";
 export default function Reveal({
   children,
   delay = 0,
-  className = "",
+  className = "h-full",
 }: {
   children: ReactNode;
   delay?: number;
