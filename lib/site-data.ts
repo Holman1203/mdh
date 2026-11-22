@@ -53,14 +53,14 @@ export const home = {
     primaryCta: { label: "Partner With Us", href: "/partner/" },
     secondaryCta: { label: "Join the Academy", href: "/services/#academy" },
     chips: [
-      { icon: "Layers", title: "5 integrated pillars", sub: "Workspace to Community" },
+      { icon: "Layers", title: "6 integrated pillars", sub: "Workspace to AI" },
       { icon: "Target", title: "SDG 4 · 8 · 9 · 17", sub: "Aligned impact goals" },
     ],
   },
   stats: [
     { value: "3", label: "Barriers we remove" },
-    { value: "5", label: "Integrated pillars" },
-    { value: "5", label: "Steps in our pipeline" },
+    { value: "6", label: "Integrated pillars" },
+    { value: "6", label: "Steps in our pipeline" },
     { value: "4", label: "SDGs we align with" },
   ],
   barriers: {
@@ -87,16 +87,16 @@ export const home = {
     ],
   },
   pillars: {
-    eyebrow: "Our five pillars",
-    title: "One integrated model, five ways to build",
+    eyebrow: "Our six pillars",
+    title: "One integrated model, six ways to build",
     intro:
-      "Each pillar feeds the others, so a young person can train at the Academy, build at the Workspace, launch through Ventures and connect to markets through the Community.",
+      "Each pillar feeds the others, so a young person can train at the Academy, build at the Workspace, launch through Ventures and connect to markets through the Community, with Mamrex AI built into every step.",
   },
   pipeline: {
     eyebrow: "How it works",
-    title: "A pipeline, not five separate offerings",
+    title: "A pipeline, not six separate offerings",
     intro:
-      "The five pillars work as a single pipeline that moves a person or business from access, to skill, to venture, to scale.",
+      "The six pillars work as a single pipeline that moves a person or business from access, to skill, to venture, to scale, with AI built in along the way.",
   },
   why: {
     eyebrow: "Why choose us",
@@ -203,6 +203,25 @@ export const pillars = [
     outcomes:
       "A visible, connected innovation community that attracts talent, partners and investment to the region.",
   },
+  {
+    id: "ai",
+    name: "Mamrex AI",
+    short: "AI",
+    tagline: "Applied AI and intelligent automation",
+    icon: "BrainCircuit",
+    purpose:
+      "Put practical artificial intelligence within reach of Nigerian learners, businesses and institutions, and build it into everything else we do.",
+    serves:
+      "Students and professionals learning AI skills; SMEs, NGOs, schools and government offices that want to work faster and smarter with AI tools.",
+    delivers: [
+      "AI literacy and practical AI skills inside Academy programmes",
+      "AI-assisted tools and automation across our software, consulting and marketing services",
+      "Guidance on adopting AI responsibly, including data protection under the Nigeria Data Protection Act 2023",
+      "Support for founders building AI-enabled products through Ventures",
+    ],
+    outcomes:
+      "A workforce and a local business community that can use AI confidently and responsibly, and services that deliver more value for the same effort.",
+  },
 ];
 
 export const pipelineSteps = [
@@ -223,6 +242,10 @@ export const pipelineSteps = [
     text: "Mamrex Ventures supports validated ideas into investable, fundable businesses through mentorship and funding access.",
   },
   {
+    title: "Amplify with AI",
+    text: "Mamrex AI builds practical AI skills and tools into training, venture support and institutional services, so every step reaches further.",
+  },
+  {
     title: "Extend & Sustain",
     text: "Mamrex Connect and the digital services arm extend our infrastructure expertise to institutions and generate the recurring revenue that sustains the model.",
   },
@@ -232,7 +255,7 @@ export const whyChoose = [
   {
     icon: "Layers",
     title: "An integrated, not isolated, model",
-    text: "Infrastructure, skills training, startup support, enterprise connectivity and community building are designed to reinforce one another, so impact compounds rather than stays siloed.",
+    text: "Infrastructure, skills training, startup support, enterprise connectivity, community building and applied AI are designed to reinforce one another, so impact compounds rather than stays siloed.",
   },
   {
     icon: "ShieldCheck",
@@ -284,7 +307,7 @@ export const about = {
   summaryTitle: "Executive summary",
   summary: [
     "Mamrex Digital Hub Ltd (MAMREX HUB) is a Nigerian technology and innovation company headquartered in Maiduguri, Borno State, and incorporated under the Companies and Allied Matters Act 2020. It exists to remove three barriers that most often hold back young African talent and early-stage businesses: unreliable infrastructure, a gap between formal education and the skills the digital economy demands, and limited access to mentorship and funding.",
-    "We address these barriers through five integrated pillars — Workspace, Academy, Ventures, Connect and Community — supported by a commercial digital-services arm that provides software development, IT consultancy, branding and digital marketing, and hardware and networking supply. Each pillar feeds the others, so a young person can train at the Academy, build at the Workspace, launch through Ventures, and connect to markets and partners through the Community.",
+    "We address these barriers through six integrated pillars — Workspace, Academy, Ventures, Connect, Community and AI — supported by a commercial digital-services arm that provides software development, IT consultancy, branding and digital marketing, and hardware and networking supply. Each pillar feeds the others, so a young person can train at the Academy, build at the Workspace, launch through Ventures, and connect to markets and partners through the Community.",
     "MAMREX HUB is a newly established company. Its credibility rests on a clear, legally registered structure, a focused model built around real local needs, and a founder with hands-on experience delivering ICT systems for humanitarian and development organisations in Nigeria. We are seeking partners who share our conviction that dependable infrastructure, practical skills and accessible capital are the foundation of inclusive economic recovery and growth in North-East Nigeria and beyond.",
   ],
   whyTitle: "Why we exist",
@@ -390,11 +413,11 @@ export const services = {
   meta: {
     title: "Services",
     description:
-      "Explore the five Mamrex pillars — Workspace, Academy, Ventures, Connect and Community — and our digital services arm.",
+      "Explore the six Mamrex pillars — Workspace, Academy, Ventures, Connect, Community and AI — and our digital services arm.",
   },
   hero: {
     eyebrow: "Our services",
-    title: "Five interconnected pillars, supported by a commercial digital-services arm",
+    title: "Six interconnected pillars, supported by a commercial digital-services arm",
     intro:
       "Designed to move a person or business from access, to skill, to venture, to scale.",
   },
@@ -408,7 +431,7 @@ export const services = {
     eyebrow: "Digital services arm",
     title: "Commercial services that sustain the mission",
     intro:
-      "Alongside the five pillars, MAMREX HUB operates a commercial services arm. It earns income, creates practical work experience for Academy graduates, and gives us direct, ongoing relationships with the institutions we hope to serve.",
+      "Alongside the six pillars, MAMREX HUB operates a commercial services arm. It earns income, creates practical work experience for Academy graduates, and gives us direct, ongoing relationships with the institutions we hope to serve.",
     items: [
       {
         icon: "Code2",
@@ -806,7 +829,7 @@ export const trustItems = [
  * When you have real results, add them here, e.g. { value: 120, suffix: "+", label: "People trained" }.
  */
 export const impactNumbers = [
-  { value: 5, suffix: "", label: "Integrated pillars" },
+  { value: 6, suffix: "", label: "Integrated pillars" },
   { value: 4, suffix: "", label: "Digital service lines" },
   { value: 4, suffix: "", label: "Planned Academy tracks" },
   { value: 36, suffix: "", label: "Month roadmap to regional scale" },
@@ -825,7 +848,7 @@ export const valuesIntro = {
 };
 
 /** Filterable programme cards. Programmes launch in phases (see Roadmap). */
-export const programmeFilters = ["All", "Academy", "Ventures", "Community", "Workspace"];
+export const programmeFilters = ["All", "Academy", "Ventures", "Community", "Workspace", "AI"];
 
 export const programmes = [
   {
@@ -881,6 +904,18 @@ export const programmes = [
     icon: "Handshake",
     title: "Founder network",
     text: "A connected network of founders sharing knowledge, partners and opportunities.",
+  },
+  {
+    category: "AI",
+    icon: "BrainCircuit",
+    title: "AI literacy and practical AI skills",
+    text: "Hands-on training in using AI tools well and responsibly, built into Academy programmes.",
+  },
+  {
+    category: "AI",
+    icon: "Zap",
+    title: "AI and automation for organisations",
+    text: "Practical guidance and tools for SMEs, NGOs, schools and offices that want to work smarter with AI.",
   },
   {
     category: "Workspace",

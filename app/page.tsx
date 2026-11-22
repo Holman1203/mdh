@@ -60,7 +60,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* 4. SERVICES — five pillars + the digital services arm */}
+      {/* 4. SERVICES — six pillars + the digital services arm */}
       <Section tone="tint" id="services">
         <Reveal>
           <SectionHeading {...home.pillars} />
@@ -144,7 +144,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Programmes"
             title="Training, incubation and community programmes"
-            intro="Filter by pillar to see what we are building across the Academy, Ventures, Community and Workspace."
+            intro="Filter by pillar to see what we are building across the Academy, Ventures, Community, Workspace and AI."
           />
         </Reveal>
         <div className="mt-10">

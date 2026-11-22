@@ -2,7 +2,7 @@ import { pipelineSteps } from "@/lib/site-data";
 
 export default function PipelineSteps() {
   return (
-    <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+    <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {pipelineSteps.map((s, i) => (
         <li
           key={s.title}
@@ -13,7 +13,7 @@ export default function PipelineSteps() {
           </span>
           <h3 className="text-3xl font-bold tracking-wide text-brand">{s.title}</h3>
           <p className="mt-2 text-sm leading-relaxed text-black/70">{s.text}</p>
-          {i < pipelineSteps.length - 1 && (
+          {i % 3 !== 2 && i < pipelineSteps.length - 1 && (
             <span className="absolute -right-3 top-10 hidden h-0.5 w-6 bg-accent lg:block" aria-hidden="true" />
           )}
         </li>

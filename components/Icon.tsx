@@ -2,6 +2,7 @@ import {
   Award,
   BarChart3,
   Banknote,
+  BrainCircuit,
   Building2,
   Code2,
   Copy,
@@ -38,6 +39,7 @@ import {
 
 const icons: Record<string, LucideIcon> = {
   Award,
+  BrainCircuit,
   BarChart3,
   Banknote,
   Building2,
