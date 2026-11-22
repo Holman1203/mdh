@@ -29,7 +29,7 @@ const styles = {
 };
 
 export default function Button({ href, children, variant = "primary", external, className = "" }: Props) {
-  const cls = `inline-flex min-h-[48px] items-center justify-center gap-2 rounded-card px-6 py-3 text-base transition-all duration-200 ${styles[variant]} ${className}`;
+  const cls = `group inline-flex min-h-[48px] items-center justify-center gap-2 rounded-card px-6 py-3 text-base transition-all duration-200 ${styles[variant]} ${className}`;
   if (external || href.startsWith("http") || href.endsWith(".pdf")) {
     return (
       <a href={href} className={cls} {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}>

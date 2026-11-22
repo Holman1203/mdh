@@ -24,24 +24,10 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const { hero } = home;
   return (
     <>
-      {/* 1. HERO — dynamic: cursor-reactive photo, photo tiles that change the background, live network */}
-      <HeroScene>
-        <p className="text-base font-bold uppercase tracking-[0.2em] text-accent sm:text-lg">{hero.welcome}</p>
-        <h1 className="mt-4 text-7xl leading-[0.92] text-snow sm:text-8xl lg:text-[9rem]">
-          {hero.headline.split(" ").slice(0, -1).join(" ")}{" "}
-          <span className="text-accent">{hero.headline.split(" ").slice(-1)}</span>
-        </h1>
-        <p className="mt-6 text-2xl font-bold leading-snug text-snow sm:text-3xl">{hero.title}</p>
-        <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-          <Button href={hero.primaryCta.href}>{hero.primaryCta.label}</Button>
-          <Button href={hero.secondaryCta.href} variant="light">
-            {hero.secondaryCta.label}
-          </Button>
-        </div>
-      </HeroScene>
+      {/* 1. HERO — photo, headline, subtitle and buttons all change together (see HeroScene + heroSlides) */}
+      <HeroScene />
 
       {/* 2. TRUST STRIP */}
       <TrustStrip />

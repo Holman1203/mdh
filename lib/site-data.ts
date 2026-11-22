@@ -955,15 +955,75 @@ export const newsletter = {
 };
 
 /**
- * HERO BACKGROUND — African / Nigerian young people in learning and tech (free Unsplash photos, links in the README).
- * The hero fades slowly from one photo to the next on its own. Replace files in public/hero/ and edit this list.
- * pos = which part of the photo stays visible when it is cropped (CSS object-position).
+ * HERO — each slide pairs an African / Nigerian photo (free Unsplash, links in the README) with its own
+ * headline, subtitle and two buttons. The hero changes slide on its own; everything changes together.
+ * Replace photos in public/hero/ and edit the wording here. pos = which part of the photo stays visible
+ * when it is cropped (CSS object-position). The wording follows the corporate profile.
  */
-export const heroSlides = [
-  { src: "/hero/hero.webp", pos: "65% center", alt: "Young Nigerian developers working together at a shared workspace in Lagos" },
-  { src: "/hero/hero-man.webp", pos: "58% 30%", alt: "A smiling young Nigerian man holding a laptop" },
-  { src: "/hero/hero-children.webp", pos: "70% center", alt: "School pupils learning in a classroom in Lagos, Nigeria" },
-  { src: "/hero/hero-woman.webp", pos: "65% center", alt: "A young African woman smiling at her laptop at work" },
-  { src: "/hero/hero-couple.webp", pos: "65% center", alt: "Two young African professionals looking at a laptop together" },
-  { src: "/hero/hero-headphones.webp", pos: "62% 35%", alt: "A smiling young African woman with headphones at her workplace" },
+export const heroWelcome = "Welcome to Mamrex Digital Hub";
+
+type HeroCta = { label: string; href: string };
+export const heroSlides: {
+  src: string;
+  pos: string;
+  alt: string;
+  headline: string;
+  subtitle: string;
+  primary: HeroCta;
+  secondary: HeroCta;
+}[] = [
+  {
+    src: "/hero/hero.webp",
+    pos: "65% center",
+    alt: "Young Nigerian developers working together at a shared workspace in Lagos",
+    headline: "Build on Strength",
+    subtitle: "Technology, skills and enterprise for Nigeria's next generation of innovators.",
+    primary: { label: "Partner With Us", href: "/partner/" },
+    secondary: { label: "Join the Academy", href: "/services/#academy" },
+  },
+  {
+    src: "/hero/hero-man.webp",
+    pos: "58% 30%",
+    alt: "A smiling young Nigerian man holding a laptop",
+    headline: "Build Skills",
+    subtitle: "Practical, project-based training that prepares young people for real work in the digital economy.",
+    primary: { label: "Join the Academy", href: "/services/#academy" },
+    secondary: { label: "See our programmes", href: "/#programmes" },
+  },
+  {
+    src: "/hero/hero-children.webp",
+    pos: "70% center",
+    alt: "School pupils learning in a classroom in Lagos, Nigeria",
+    headline: "Close the Skills Gap",
+    subtitle: "Bridging the distance between formal education and the skills the digital economy demands.",
+    primary: { label: "Join the Academy", href: "/services/#academy" },
+    secondary: { label: "Partner With Us", href: "/partner/" },
+  },
+  {
+    src: "/hero/hero-woman.webp",
+    pos: "65% center",
+    alt: "A young African woman smiling at her laptop at work",
+    headline: "Work Without Limits",
+    subtitle: "Reliable power and high-quality internet, so you can work without interruption from a professional base.",
+    primary: { label: "Explore the Workspace", href: "/services/#workspace" },
+    secondary: { label: "Contact Us", href: "/contact/" },
+  },
+  {
+    src: "/hero/hero-couple.webp",
+    pos: "65% center",
+    alt: "Two young African professionals looking at a laptop together",
+    headline: "Launch Ventures",
+    subtitle: "Mentorship, business support and access to funding partners that turn validated ideas into investable businesses.",
+    primary: { label: "Explore Ventures", href: "/services/#ventures" },
+    secondary: { label: "Partner With Us", href: "/partner/" },
+  },
+  {
+    src: "/hero/hero-headphones.webp",
+    pos: "62% 35%",
+    alt: "A smiling young African woman with headphones at her workplace",
+    headline: "Amplify with AI",
+    subtitle: "Practical AI skills and tools built into our training, ventures and services, so every step reaches further.",
+    primary: { label: "Explore Mamrex AI", href: "/services/#ai" },
+    secondary: { label: "Contact Us", href: "/contact/" },
+  },
 ];

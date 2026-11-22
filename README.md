@@ -44,7 +44,7 @@ Project → Settings → Domains → add your domain and follow the DNS instruct
 
 ## Hero
 
-The home-page hero fades slowly between six photos of young African and Nigerian people in learning and tech, with a gentle slow zoom, entirely on its own: it does not react to the mouse. A small button pauses it, and visitors who prefer reduced motion see a still photo. The code is `components/HeroScene.tsx`; the photos and captions are in `lib/site-data.ts` (`heroSlides`) and `public/hero/`.
+The home-page hero fades slowly between six photos of young African and Nigerian people in learning and tech, with a gentle slow zoom, entirely on its own: it does not react to the mouse. The headline, subtitle and both buttons change together with each photo. A small button pauses it, and visitors who prefer reduced motion see a still photo. The code is `components/HeroScene.tsx`; the photos, wording and buttons for each slide are in `lib/site-data.ts` (`heroSlides`) and `public/hero/`.
 
 Photos (free under the Unsplash Licence; credit is optional):
 
