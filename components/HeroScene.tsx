@@ -66,11 +66,11 @@ export default function HeroScene() {
         <p className="text-base font-bold uppercase tracking-[0.2em] text-accent sm:text-lg">{heroWelcome}</p>
 
         {/* headline + subtitle: change with the photo */}
-        <div key={`t-${index}`} className="my-auto max-w-2xl animate-fade-up py-8">
-          <h1 className="text-7xl leading-[0.92] text-snow sm:text-8xl lg:text-[9rem]">
+        <div key={`t-${index}`} className="my-auto animate-fade-up py-8">
+          <h1 className="whitespace-nowrap leading-[0.95] text-snow" style={{ fontSize: "clamp(2.75rem, 18vw, 9rem)" }}>
             {words.slice(0, -1).join(" ")} <span className="text-accent">{words[words.length - 1]}</span>
           </h1>
-          <p className="mt-6 text-2xl font-bold leading-snug text-snow sm:text-3xl">{slide.subtitle}</p>
+          <p className="mt-6 max-w-2xl text-2xl font-bold leading-snug text-snow sm:text-3xl">{slide.subtitle}</p>
         </div>
 
         {/* buttons at the bottom: also change with the photo; progress and pause beside them */}
