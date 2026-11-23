@@ -5,6 +5,7 @@ import SectionHeading from "@/components/SectionHeading";
 import FeatureTile from "@/components/FeatureTile";
 import PartnerCtaBand from "@/components/PartnerCtaBand";
 import { leadership } from "@/lib/site-data";
+import Image from "next/image";
 import { Users } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -21,13 +22,19 @@ export default function LeadershipPage() {
 
       <Section>
         <div className="grid items-start gap-10 lg:grid-cols-3">
-          {/* TODO: replace with real photo */}
-          <div
-            role="img"
-            aria-label="Placeholder portrait of the founder"
-            className="flex aspect-square items-center justify-center rounded-tile bg-navy font-heading text-7xl font-extrabold text-snow"
-          >
-            SH
+          {/* Founder portrait (public/founder.webp) with an orange offset frame echoing the logo's rounded squares */}
+          <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
+            <span className="absolute -bottom-3 -right-3 h-full w-full rounded-tile border-2 border-accent" aria-hidden="true" />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-tile bg-navy shadow-lift">
+              <Image
+                src="/founder.webp"
+                alt={`Portrait of ${f.name}, ${f.role}`}
+                fill
+                priority
+                sizes="(min-width: 1024px) 360px, 90vw"
+                className="object-cover object-top"
+              />
+            </div>
           </div>
           <div className="lg:col-span-2">
             <p className="mb-2 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-brand">
@@ -35,7 +42,8 @@ export default function LeadershipPage() {
               {f.role}
             </p>
             <h2 className="font-heading text-5xl font-bold text-brand">{f.name}</h2>
-            <p className="mt-5 text-lg leading-relaxed text-black/80">{f.bio}</p>
+            {/* justified text; hyphenation (lang="en-GB") keeps the spacing even */}
+            <p className="mt-5 hyphens-auto text-justify text-lg leading-relaxed text-black/80">{f.bio}</p>
           </div>
         </div>
 
