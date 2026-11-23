@@ -50,6 +50,11 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link href="/donate/" className="inline-flex min-h-[32px] items-center font-semibold text-accent transition-colors hover:text-snow">
+                Donate Now
+              </Link>
+            </li>
           </ul>
         </nav>
 

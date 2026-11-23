@@ -808,6 +808,7 @@ export const contact = {
       "Mamrex Academy",
       "Mamrex Workspace",
       "Mamrex Ventures",
+      "Donation or support",
       "Other",
     ],
   },
@@ -1027,3 +1028,71 @@ export const heroSlides: {
     secondary: { label: "Contact Us", href: "/contact/" },
   },
 ];
+
+/* ---------------------------------- DONATE --------------------------------- */
+
+/**
+ * DONATE PAGE — bank details and the Paystack link live here.
+ * paystackUrl: paste your Paystack payment page link (e.g. "https://paystack.com/pay/your-page").
+ * While it is empty, the Paystack button is hidden and a "coming soon" note is shown instead.
+ */
+export const donate = {
+  accountName: "MAMREX DIGITAL HUB LTD",
+  accountNumber: "0128434091",
+  bankName: "Wema Bank",
+  paystackUrl: "", // TODO: paste your Paystack payment link here
+
+  meta: {
+    title: "Donate Now",
+    description:
+      "Support Mamrex Digital Hub: donate by Paystack or bank transfer to fund training, tools and opportunities for young people and early-stage founders in North-East Nigeria.",
+  },
+  hero: {
+    eyebrow: "Donate now",
+    title: "Help a young innovator build on strength",
+    intro:
+      "Your support funds training, tools and opportunities for young people and early-stage founders in Maiduguri and across North-East Nigeria.",
+  },
+  online: {
+    text: "Give quickly and securely by card or bank transfer through Paystack. You choose the amount.",
+  },
+  bank: {
+    text: "Prefer a direct transfer? Use the account below. Please keep your transfer receipt.",
+  },
+  after: {
+    title: "After you give",
+    text: "Please email or WhatsApp us your name and proof of payment so that we can acknowledge your gift and thank you.",
+  },
+  use: {
+    eyebrow: "Where your support goes",
+    title: "Training, tools and opportunity",
+    intro: "Gifts help us deliver programmes and equip the young people and founders we serve.",
+    items: [
+      {
+        icon: "GraduationCap",
+        title: "Scholarships",
+        text: "Places for women, youth and displaced or vulnerable learners.",
+      },
+      {
+        icon: "Users",
+        title: "Training cohorts",
+        text: "Practical, project-based digital skills training at the Academy.",
+      },
+      {
+        icon: "Rocket",
+        title: "Incubation",
+        text: "Mentorship and business support for early-stage founders.",
+      },
+      {
+        icon: "Package",
+        title: "Equipment and connectivity",
+        text: "Devices, bandwidth, software licences and workspace fit-out.",
+      },
+    ],
+  },
+  other: {
+    eyebrow: "Other ways to support",
+    title: "Partner with us",
+    text: "Donors, foundations, businesses and institutions can also fund a programme, give in-kind support, sponsor scholarships or co-design a programme with us.",
+  },
+};

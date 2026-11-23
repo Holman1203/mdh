@@ -78,8 +78,8 @@ export default function Header() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Button href="/contact/" className="hidden !min-h-[44px] whitespace-nowrap !px-5 !py-2 !text-[15px] sm:inline-flex">
-            Get Started
+          <Button href="/donate/" className="hidden !min-h-[44px] whitespace-nowrap !px-5 !py-2 !text-[15px] sm:inline-flex">
+            Donate Now
           </Button>
           <button
             type="button"
@@ -136,8 +136,8 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <Button href="/contact/" className="mt-6 w-full">
-            Get Started
+          <Button href="/donate/" className="mt-6 w-full">
+            Donate Now
           </Button>
           <p className="mt-4 text-center text-sm text-snow/80">{site.tagline}</p>
         </nav>
