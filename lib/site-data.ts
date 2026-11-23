@@ -16,9 +16,9 @@ export const site = {
   cacStatus: "Active",
   incorporated: "8 October 2026",
   email: "mamrexhub@gmail.com",
-  phone: "+234 901 247 5919",
-  phoneHref: "+2349012475919",
-  whatsappHref: "https://wa.me/2349012475919",
+  phone: "+234 813 072 8581",
+  phoneHref: "+2348130728581",
+  whatsappHref: "https://wa.me/2348130728581",
   address: {
     street: "24 Police Road, Old Airport",
     city: "Maiduguri",
