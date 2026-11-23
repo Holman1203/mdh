@@ -23,7 +23,7 @@
     color-scheme: dark;
   }
   body {
-    @apply bg-white font-body text-[17px] leading-relaxed text-black antialiased;
+    @apply bg-white font-body text-[17px] font-light leading-relaxed text-black antialiased;
   }
   /* League Gothic has one weight: never fake-bold it */
   body {
@@ -32,7 +32,8 @@
   h1, h2, h3, h4 {
     @apply font-heading;
     font-weight: 400;
-    letter-spacing: 0.005em;
+    letter-spacing: 0.01em;
+    line-height: 1.05;
   }
   /* Visible focus: brand ring; white ring on navy areas */
   :focus-visible {
@@ -51,6 +52,8 @@
 }
 
 @layer components {
+  /* small text stays regular weight so it remains readable; larger text and subtitles are light */
+  .text-sm, .text-xs { font-weight: 400; }
   /* Faint technical grid used behind navy heroes */
   .grid-bg {
     background-image:

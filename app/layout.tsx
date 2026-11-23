@@ -7,7 +7,7 @@ import JsonLd from "@/components/JsonLd";
 import FloatingActions from "@/components/FloatingActions";
 import { site } from "@/lib/site-data";
 
-/** Tall condensed display face for headings (League Gothic) + clean humanist sans for body text (Lato). */
+/** Slim, tall condensed display face for headings (League Gothic) + slim, light humanist sans for body text and subtitles (Lato Light). */
 const display = League_Gothic({
   subsets: ["latin"],
   variable: "--font-display",
@@ -17,7 +17,7 @@ const sans = Lato({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-  weight: ["400", "700", "900"],
+  weight: ["300", "400", "700"],
 });
 
 export const metadata: Metadata = {

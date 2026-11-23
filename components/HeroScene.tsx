@@ -63,14 +63,14 @@ export default function HeroScene() {
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-navy/80 via-transparent to-transparent" aria-hidden="true" />
 
       <div className="mx-auto flex w-full max-w-6xl flex-col px-4 pb-8 pt-14 sm:px-6 sm:pb-10 sm:pt-20 lg:px-8">
-        <p className="text-base font-bold uppercase tracking-[0.2em] text-accent sm:text-lg">{heroWelcome}</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-accent sm:text-base">{heroWelcome}</p>
 
         {/* headline + subtitle: change with the photo */}
         <div key={`t-${index}`} className="my-auto animate-fade-up py-8">
-          <h1 className="whitespace-nowrap leading-[0.95] text-snow" style={{ fontSize: "clamp(2.75rem, 18vw, 9rem)" }}>
+          <h1 className="whitespace-nowrap leading-[0.95] text-snow" style={{ fontSize: "clamp(2.5rem, calc((100vw - 2.5rem) / 5.4), 7rem)" }}>
             {words.slice(0, -1).join(" ")} <span className="text-accent">{words[words.length - 1]}</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-2xl font-bold leading-snug text-snow sm:text-3xl">{slide.subtitle}</p>
+          <p className="mt-5 max-w-xl text-lg font-light leading-relaxed text-snow sm:text-xl">{slide.subtitle}</p>
         </div>
 
         {/* buttons at the bottom: also change with the photo; progress and pause beside them */}

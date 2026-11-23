@@ -15,7 +15,7 @@ export default function SectionHeading({
     <div className={`max-w-3xl ${center ? "mx-auto text-center" : ""}`}>
       {eyebrow && (
         <p
-          className={`mb-4 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] ${
+          className={`mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] sm:text-sm ${
             onDark ? "text-accent" : "text-brand"
           }`}
         >

@@ -17,7 +17,7 @@ export default function PageHero({
       <div className="grid-bg absolute inset-0 -z-10" aria-hidden="true" />
       <div className="glow-orange absolute -right-24 -top-24 -z-10 h-96 w-96" aria-hidden="true" />
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <p className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-accent">
+        <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] sm:text-sm text-accent">
           <span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
           {eyebrow}
         </p>
