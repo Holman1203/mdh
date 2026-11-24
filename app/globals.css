@@ -77,7 +77,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-float, .animate-drift, .animate-kenburns { animation: none !important; }
+  .animate-float, .animate-drift, .animate-kenburns, .animate-scan-y, .animate-scan-y-slow, .animate-scan-x, .animate-net-drift, .animate-twinkle { animation: none !important; }
   html { scroll-behavior: auto; }
   *, *::before, *::after {
     transition-duration: 0.01ms !important;

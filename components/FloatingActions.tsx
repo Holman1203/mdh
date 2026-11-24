@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowUp, MessageCircle } from "lucide-react";
-import { site } from "@/lib/site-data";
+import { ArrowUp } from "lucide-react";
+import ChatBot from "./ChatBot";
 
-/** Floating WhatsApp chat button + back-to-top button (appears after scrolling). */
+/** Floating chat assistant + back-to-top button (appears after scrolling). */
 export default function FloatingActions() {
   const [showTop, setShowTop] = useState(false);
 
@@ -28,15 +28,7 @@ export default function FloatingActions() {
       >
         <ArrowUp className="h-5 w-5" aria-hidden="true" />
       </button>
-      <a
-        href={site.whatsappHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat with us on WhatsApp"
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-accent text-navy shadow-lift transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent/90 active:scale-95"
-      >
-        <MessageCircle className="h-7 w-7" aria-hidden="true" />
-      </a>
+      <ChatBot />
     </div>
   );
 }
