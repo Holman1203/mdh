@@ -166,3 +166,42 @@ export async function saveLessonResult(
   write(lsDataKey(userId), d);
   return {};
 }
+
+/* ───────────── admin (only works for accounts listed in public.admins) ───────────── */
+export type AdminLearner = {
+  user_id: string;
+  email: string;
+  full_name: string;
+  registered_at: string;
+  last_sign_in: string | null;
+  courses_enrolled: number;
+  lessons_completed: number;
+};
+export type AdminEnrolment = {
+  user_id: string;
+  email: string;
+  full_name: string;
+  course: string;
+  enrolled_at: string;
+  lessons_done: number;
+  last_activity: string | null;
+};
+
+export async function checkIsAdmin(): Promise<boolean> {
+  const c = client();
+  if (!c) return false;
+  const { data, error } = await c.rpc("is_admin");
+  return !error && data === true;
+}
+
+export async function fetchAdminData(): Promise<{ learners: AdminLearner[]; enrolments: AdminEnrolment[]; error?: string }> {
+  const c = client();
+  if (!c) return { learners: [], enrolments: [], error: "Not connected." };
+  const [l, e] = await Promise.all([c.rpc("admin_learners"), c.rpc("admin_enrolments")]);
+  if (l.error || e.error) return { learners: [], enrolments: [], error: (l.error ?? e.error)?.message };
+  const num = (v: unknown) => Number(v ?? 0);
+  return {
+    learners: ((l.data ?? []) as AdminLearner[]).map((r) => ({ ...r, courses_enrolled: num(r.courses_enrolled), lessons_completed: num(r.lessons_completed) })),
+    enrolments: ((e.data ?? []) as AdminEnrolment[]).map((r) => ({ ...r, lessons_done: num(r.lessons_done) })),
+  };
+}
