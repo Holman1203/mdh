@@ -67,8 +67,8 @@ export default function HeroScene() {
 
         {/* headline + subtitle: change with the photo */}
         <div key={`t-${index}`} className="my-auto animate-fade-up py-8">
-          <h1 className="whitespace-nowrap leading-[0.95] text-snow" style={{ fontSize: "clamp(2.5rem, calc((100vw - 2.5rem) / 5.4), 7rem)" }}>
-            {words.slice(0, -1).join(" ")} <span className="text-accent">{words[words.length - 1]}</span>
+          <h1 className="whitespace-nowrap leading-[1.02] font-semibold text-snow" style={{ fontSize: "clamp(2.25rem, calc((100vw - 2.5rem) / 6.9), 7rem)" }}>
+            {words.slice(0, -1).join(" ")} <span className="italic text-accent">{words[words.length - 1]}</span>
           </h1>
           <p className="mt-5 max-w-xl text-lg font-light leading-relaxed text-snow sm:text-xl">{slide.subtitle}</p>
         </div>

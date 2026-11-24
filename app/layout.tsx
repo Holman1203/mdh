@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Lato, League_Gothic } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,17 +7,18 @@ import JsonLd from "@/components/JsonLd";
 import FloatingActions from "@/components/FloatingActions";
 import { site } from "@/lib/site-data";
 
-/** Slim, tall condensed display face for headings (League Gothic) + slim, light humanist sans for body text and subtitles (Lato Light). */
-const display = League_Gothic({
+/** Headings: Cormorant Garamond (elegant serif, with italic for accent words). Body, buttons and subtitles: DM Sans (clean modern sans). */
+const display = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
+  weight: ["500", "600", "700"],
+  style: ["normal", "italic"],
 });
-const sans = Lato({
+const sans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-  weight: ["300", "400", "700"],
 });
 
 export const metadata: Metadata = {

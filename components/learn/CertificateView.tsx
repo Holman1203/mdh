@@ -22,7 +22,7 @@ export default function CertificateView({ course }: { course: Course }) {
     return (
       <Section>
         <div className="mx-auto max-w-lg rounded-tile border border-black/10 bg-white p-8 text-center shadow-soft">
-          <h1 className="text-4xl font-bold text-brand">Certificate not ready yet</h1>
+          <h1 className="text-4xl font-semibold text-brand">Certificate not ready yet</h1>
           <p className="mt-3 text-black/70">
             {user ? "Complete every lesson in this course to unlock your certificate." : "Sign in to view your certificate."}
           </p>
@@ -44,7 +44,7 @@ export default function CertificateView({ course }: { course: Course }) {
     <Section>
       <div className="mx-auto max-w-4xl">
         <div className="no-print mb-6 flex flex-wrap items-center justify-between gap-3">
-          <h1 className="text-4xl font-bold text-brand">Your certificate</h1>
+          <h1 className="text-4xl font-semibold text-brand">Your certificate</h1>
           <button
             type="button"
             onClick={() => window.print()}

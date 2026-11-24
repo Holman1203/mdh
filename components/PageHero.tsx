@@ -21,7 +21,7 @@ export default function PageHero({
           <span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
           {eyebrow}
         </p>
-        <h1 className="mt-4 max-w-3xl text-5xl font-extrabold leading-[1.02] text-snow sm:text-6xl lg:text-7xl">
+        <h1 className="mt-4 max-w-3xl text-5xl font-semibold leading-[1.02] text-snow sm:text-6xl lg:text-7xl">
           {title}
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-snow/85 sm:text-xl">{intro}</p>

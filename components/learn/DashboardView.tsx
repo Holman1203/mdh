@@ -25,7 +25,7 @@ export default function DashboardView() {
     return (
       <Section>
         <div className="mx-auto max-w-lg rounded-tile border border-black/10 bg-white p-8 text-center shadow-soft">
-          <h1 className="text-4xl font-bold text-brand">Sign in to see your courses</h1>
+          <h1 className="text-4xl font-semibold text-brand">Sign in to see your courses</h1>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Button href="/learn/sign-in/">Sign in</Button>
             <Button href="/learn/register/" variant="secondary">Register free</Button>
@@ -67,7 +67,7 @@ export default function DashboardView() {
 
         {certs.length > 0 && (
           <div className="mt-12">
-            <h2 className="text-3xl font-bold text-brand">My certificates</h2>
+            <h2 className="text-3xl font-semibold text-brand">My certificates</h2>
             <ul className="mt-4 space-y-2">
               {certs.map((c) => (
                 <li key={c.slug}>

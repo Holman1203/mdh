@@ -24,7 +24,7 @@ export default function SectionHeading({
         </p>
       )}
       <h2
-        className={`text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl ${
+        className={`text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl ${
           onDark ? "text-snow" : "text-brand"
         }`}
       >

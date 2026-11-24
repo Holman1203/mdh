@@ -96,7 +96,7 @@ export default function CourseView({ course }: { course: Course }) {
 
           <aside className="space-y-6 lg:pt-16">
             <div className="rounded-tile border border-black/10 bg-white p-6 shadow-soft">
-              <h3 className="text-2xl font-bold text-brand">By the end you can</h3>
+              <h3 className="text-2xl font-semibold text-brand">By the end you can</h3>
               <ul className="mt-4 space-y-3">
                 {course.outcomes.map((o) => (
                   <li key={o} className="flex gap-3">

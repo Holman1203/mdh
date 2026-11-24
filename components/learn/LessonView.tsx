@@ -37,7 +37,7 @@ export default function LessonView({ course, index }: { course: Course; index: n
     return (
       <Section>
         <div className="mx-auto max-w-lg rounded-tile border border-black/10 bg-white p-8 text-center shadow-soft">
-          <h1 className="text-4xl font-bold text-brand">Sign in to start learning</h1>
+          <h1 className="text-4xl font-semibold text-brand">Sign in to start learning</h1>
           <p className="mt-3 text-black/70">Register free to unlock every lesson and keep your progress.</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Button href={`/learn/register/?next=${here}`}>Register free</Button>
@@ -52,7 +52,7 @@ export default function LessonView({ course, index }: { course: Course; index: n
     return (
       <Section>
         <div className="mx-auto max-w-lg rounded-tile border border-black/10 bg-white p-8 text-center shadow-soft">
-          <h1 className="text-4xl font-bold text-brand">Enrol to continue</h1>
+          <h1 className="text-4xl font-semibold text-brand">Enrol to continue</h1>
           <p className="mt-3 text-black/70">Enrol free in <strong>{course.title}</strong> to open this lesson.</p>
           <div className="mt-6">
             <button
@@ -111,7 +111,7 @@ export default function LessonView({ course, index }: { course: Course; index: n
           Lesson {index + 1} of {course.lessons.length} · {lesson.minutes} min
           {done && " · Completed"}
         </p>
-        <h1 className="mt-2 text-5xl font-extrabold leading-[1.05] text-brand sm:text-6xl">{lesson.title}</h1>
+        <h1 className="mt-2 text-5xl font-semibold leading-[1.05] text-brand sm:text-6xl">{lesson.title}</h1>
         <div
           className="mt-5 h-2 overflow-hidden rounded-full bg-black/10"
           role="progressbar"
@@ -126,7 +126,7 @@ export default function LessonView({ course, index }: { course: Course; index: n
         <div className="mt-10 space-y-8">
           {lesson.blocks.map((b, i) => (
             <div key={i}>
-              {b.h && <h2 className="text-3xl font-bold text-brand">{b.h}</h2>}
+              {b.h && <h2 className="text-3xl font-semibold text-brand">{b.h}</h2>}
               {b.p?.map((t, j) => (
                 <p key={j} className="mt-3 text-lg leading-relaxed text-black/80">{t}</p>
               ))}
@@ -142,7 +142,7 @@ export default function LessonView({ course, index }: { course: Course; index: n
         </div>
 
         <div className="mt-10 rounded-tile border border-black/10 bg-accent/[0.08] p-6">
-          <h2 className="text-2xl font-bold text-brand">Key takeaways</h2>
+          <h2 className="text-2xl font-semibold text-brand">Key takeaways</h2>
           <ul className="mt-3 space-y-2">
             {lesson.takeaways.map((t) => (
               <li key={t} className="flex gap-3 text-black/80">
@@ -154,7 +154,7 @@ export default function LessonView({ course, index }: { course: Course; index: n
         </div>
 
         <div className="mt-12 rounded-tile border border-black/10 bg-white p-6 shadow-soft sm:p-8">
-          <h2 className="text-3xl font-bold text-brand">Quick check</h2>
+          <h2 className="text-3xl font-semibold text-brand">Quick check</h2>
           <p className="mt-1 text-black/70">Answer the questions to complete this lesson. You need at least half right.</p>
 
           <div className="mt-6 space-y-8">

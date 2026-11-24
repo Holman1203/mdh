@@ -23,7 +23,7 @@ export default function PillarCard({
       <span className="mb-6 flex h-14 w-14 items-center justify-center rounded-card bg-accent text-navy transition-colors duration-300 group-hover:bg-navy group-hover:text-snow">
         <Icon name={icon} className="h-7 w-7" />
       </span>
-      <h3 className="text-3xl font-bold text-brand">{name}</h3>
+      <h3 className="text-3xl font-semibold text-brand">{name}</h3>
       <p className="mt-1 text-sm font-semibold text-black/70">{tagline}</p>
       <p className="mt-3 flex-1 leading-relaxed text-black/70">{purpose}</p>
       <span className="mt-6 inline-flex min-h-[44px] items-center gap-1 font-semibold text-brand">

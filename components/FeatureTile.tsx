@@ -27,7 +27,7 @@ export default function FeatureTile({
       >
         <Icon name={icon} />
       </span>
-      <h3 className={`text-3xl font-bold tracking-wide ${onDark ? "text-snow" : "text-brand"}`}>{title}</h3>
+      <h3 className={`text-3xl font-semibold tracking-normal ${onDark ? "text-snow" : "text-brand"}`}>{title}</h3>
       <p className={`mt-2 leading-relaxed ${onDark ? "text-snow/80" : "text-black/70"}`}>{text}</p>
     </div>
   );

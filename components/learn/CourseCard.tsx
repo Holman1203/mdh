@@ -27,7 +27,7 @@ export default function CourseCard({ course }: { course: Course }) {
         </span>
       </div>
       <p className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-black/70">{course.pillar}</p>
-      <h3 className="mt-1 text-3xl font-bold tracking-wide text-brand">{course.title}</h3>
+      <h3 className="mt-1 text-3xl font-semibold tracking-normal text-brand">{course.title}</h3>
       <p className="mt-2 flex-1 leading-relaxed text-black/70">{course.tagline}</p>
 
       <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-black/70">

@@ -23,7 +23,7 @@ export default function RoadmapPage() {
           {roadmap.phases.map((p, i) => (
             <li key={p.phase} className="relative mb-12 pl-16 last:mb-0 md:grid md:grid-cols-2 md:gap-12 md:pl-0">
               <span
-                className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-card bg-navy font-heading text-lg font-bold text-snow md:left-1/2 md:-translate-x-1/2"
+                className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-card bg-navy font-heading text-lg font-semibold text-snow md:left-1/2 md:-translate-x-1/2"
                 aria-hidden="true"
               >
                 {i + 1}
@@ -33,7 +33,7 @@ export default function RoadmapPage() {
                   <Clock className="h-4 w-4" aria-hidden="true" />
                   {p.time}
                 </p>
-                <h2 className="mt-2 font-heading text-4xl font-bold text-brand">
+                <h2 className="mt-2 font-heading text-4xl font-semibold text-brand">
                   {p.phase} — {p.name}
                 </h2>
                 {p.goal && <p className="mt-1 font-semibold text-black/70">{p.goal}</p>}
@@ -53,7 +53,7 @@ export default function RoadmapPage() {
 
       <Section tone="tint">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-heading text-5xl font-bold text-brand">{roadmap.gate.title}</h2>
+          <h2 className="font-heading text-5xl font-semibold text-brand">{roadmap.gate.title}</h2>
           <p className="mt-4 text-lg leading-relaxed text-black/80">{roadmap.gate.text}</p>
           <p className="mt-4 text-sm text-black/70">{roadmap.gate.note}</p>
         </div>

@@ -94,7 +94,7 @@ export default function AdminView() {
     return (
       <Section>
         <div className="mx-auto max-w-lg rounded-tile border border-black/10 bg-white p-8 text-center shadow-soft">
-          <h1 className="text-4xl font-bold text-brand">{state === "error" ? "Could not load the data" : "Admin access only"}</h1>
+          <h1 className="text-4xl font-semibold text-brand">{state === "error" ? "Could not load the data" : "Admin access only"}</h1>
           <p className="mt-3 text-black/70">
             {state === "error"
               ? "Please refresh the page and try again."
@@ -136,7 +136,7 @@ export default function AdminView() {
           ))}
         </dl>
 
-        <h2 className="mt-12 text-3xl font-bold text-brand">By course</h2>
+        <h2 className="mt-12 text-3xl font-semibold text-brand">By course</h2>
         <div className="mt-4 overflow-x-auto rounded-tile border border-black/10 bg-white shadow-soft">
           <table className="w-full min-w-[480px] text-left">
             <thead className="bg-accent/[0.12] text-sm uppercase tracking-wider text-brand">
@@ -159,7 +159,7 @@ export default function AdminView() {
         </div>
 
         <div className="mt-12 flex flex-wrap items-end justify-between gap-4">
-          <h2 className="text-3xl font-bold text-brand">Learners</h2>
+          <h2 className="text-3xl font-semibold text-brand">Learners</h2>
           <div className="flex flex-wrap items-center gap-3">
             <label className="sr-only" htmlFor="adm-filter">Search learners</label>
             <input

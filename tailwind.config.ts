@@ -28,8 +28,16 @@ const config: Config = {
       accent: "rgb(255 122 0 / <alpha-value>)",
     },
     extend: {
+      // Heading sizes tuned for Cormorant Garamond (small x-height, so a little larger)
+      fontSize: {
+        "3xl": ["1.875rem", { lineHeight: "1.15" }],
+        "4xl": ["2.375rem", { lineHeight: "1.1" }],
+        "5xl": ["3rem", { lineHeight: "1.05" }],
+        "6xl": ["3.625rem", { lineHeight: "1.05" }],
+        "7xl": ["4.25rem", { lineHeight: "1.02" }],
+      },
       fontFamily: {
-        heading: ["var(--font-display)", "Impact", "Arial Narrow", "sans-serif"],
+        heading: ["var(--font-display)", "Georgia", "serif"],
         body: ["var(--font-sans)", "system-ui", "sans-serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },

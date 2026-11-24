@@ -34,7 +34,7 @@ export default function ServicesPage() {
                   <Icon name={p.icon} className="h-16 w-16" />
                 </span>
               </div>
-              <h2 className="font-heading text-5xl font-bold text-brand">{p.name}</h2>
+              <h2 className="font-heading text-5xl font-semibold text-brand">{p.name}</h2>
               <p className="mt-2 font-semibold text-black/60">{p.tagline}</p>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:col-span-2">
@@ -76,7 +76,7 @@ export default function ServicesPage() {
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {services.expertise.groups.map((g) => (
             <div key={g.title} className="rounded-tile border border-black/10 p-6">
-              <h3 className="font-heading text-4xl font-bold text-brand">{g.title}</h3>
+              <h3 className="font-heading text-4xl font-semibold text-brand">{g.title}</h3>
               <ul className="mt-4 space-y-2 text-black/80">
                 {g.items.map((it) => (
                   <li key={it} className="flex gap-2">

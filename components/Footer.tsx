@@ -41,7 +41,7 @@ export default function Footer() {
         </div>
 
         <nav aria-label="Footer">
-          <h2 className="text-base font-bold">Quick links</h2>
+          <h2 className="text-base font-semibold">Quick links</h2>
           <ul className="mt-4 space-y-1 text-sm">
             {nav.map((item) => (
               <li key={item.href}>
@@ -59,7 +59,7 @@ export default function Footer() {
         </nav>
 
         <div>
-          <h2 className="text-base font-bold">Services</h2>
+          <h2 className="text-base font-semibold">Services</h2>
           <ul className="mt-4 space-y-1 text-sm">
             {pillars.map((p) => (
               <li key={p.id}>
@@ -72,7 +72,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h2 className="text-base font-bold">{newsletter.title}</h2>
+          <h2 className="text-base font-semibold">{newsletter.title}</h2>
           <p className="mt-2 text-sm text-snow/80">{newsletter.text}</p>
           <div className="mt-4">
             <NewsletterForm />

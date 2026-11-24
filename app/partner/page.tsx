@@ -63,7 +63,7 @@ export default function PartnerPage() {
 
       <Section tone="tint">
         <div className="rounded-tile bg-navy px-6 py-12 text-center sm:px-12">
-          <h2 className="font-heading text-5xl font-bold text-snow">Start a conversation</h2>
+          <h2 className="font-heading text-5xl font-semibold text-snow">Start a conversation</h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-snow/80">
             Tell us about your priorities and reporting requirements and we will explore how to co-design a programme together.
           </p>

@@ -26,7 +26,7 @@ export function LogoOnDark() {
       <span className="flex h-12 w-12 items-center justify-center rounded-card bg-snow p-1.5">
         <Image src="/logo-icon.png" alt="" width={615} height={628} className="h-full w-auto" />
       </span>
-      <span className="text-lg font-extrabold leading-tight text-snow">
+      <span className="text-lg font-semibold leading-tight text-snow">
         MAMREX
         <br />
         DIGITAL HUB

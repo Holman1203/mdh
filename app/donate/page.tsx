@@ -36,7 +36,7 @@ export default function DonatePage() {
             <span className="flex h-14 w-14 items-center justify-center rounded-card bg-accent text-navy">
               <CreditCard className="h-7 w-7" aria-hidden="true" />
             </span>
-            <h2 className="mt-5 text-4xl font-bold text-brand">Give online with Paystack</h2>
+            <h2 className="mt-5 text-4xl font-semibold text-brand">Give online with Paystack</h2>
             <p className="mt-3 flex-1 text-lg leading-relaxed text-black/70">{donate.online.text}</p>
             <div className="mt-6">
               {hasPaystack ? (
@@ -54,7 +54,7 @@ export default function DonatePage() {
             <span className="flex h-14 w-14 items-center justify-center rounded-card bg-accent text-navy">
               <Landmark className="h-7 w-7" aria-hidden="true" />
             </span>
-            <h2 className="mt-5 text-4xl font-bold text-brand">Give by bank transfer</h2>
+            <h2 className="mt-5 text-4xl font-semibold text-brand">Give by bank transfer</h2>
             <p className="mt-3 text-lg leading-relaxed text-black/70">{donate.bank.text}</p>
             {hasBank ? (
               <dl className="mt-6 divide-y divide-black/10 rounded-card border border-black/10">
@@ -78,7 +78,7 @@ export default function DonatePage() {
 
         {/* After giving */}
         <div className="mt-8 rounded-tile bg-accent/[0.08] p-6 sm:p-8">
-          <h3 className="text-3xl font-bold text-brand">{donate.after.title}</h3>
+          <h3 className="text-3xl font-semibold text-brand">{donate.after.title}</h3>
           <p className="mt-2 max-w-3xl text-lg leading-relaxed text-black/80">{donate.after.text}</p>
           <div className="mt-5 flex flex-wrap gap-3">
             <a

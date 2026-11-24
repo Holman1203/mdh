@@ -51,7 +51,7 @@ export default function AuthForm({ mode }: { mode: "register" | "sign-in" }) {
 
   return (
     <div className="mx-auto max-w-md rounded-tile border border-black/10 bg-white p-6 shadow-soft sm:p-8">
-      <h2 className="text-4xl font-bold text-brand">{register ? "Create your free account" : "Welcome back"}</h2>
+      <h2 className="text-4xl font-semibold text-brand">{register ? "Create your free account" : "Welcome back"}</h2>
       <p className="mt-2 text-black/70">
         {register ? "Register once, then enrol in as many free courses as you like." : "Sign in to continue where you stopped."}
       </p>
