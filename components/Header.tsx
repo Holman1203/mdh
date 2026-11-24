@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { LogoFull } from "./Logo";
 import Button from "./Button";
 import ThemeToggle from "./ThemeToggle";
-import { nav, site } from "@/lib/site-data";
+import { navMenu, site } from "@/lib/site-data";
 
 /**
  * Sticky header: compact with a soft shadow after scrolling.
@@ -18,8 +18,28 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const closeRef = useRef<HTMLButtonElement>(null);
+  const [menuOpen, setMenuOpen] = useState(false); // desktop "About Us" dropdown
+  const [mobileGroup, setMobileGroup] = useState(false); // mobile "About Us" accordion
+  const dropRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    setOpen(false);
+    setMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onDown = (e: MouseEvent) => {
+      if (dropRef.current && !dropRef.current.contains(e.target as Node)) setMenuOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMenuOpen(false);
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [menuOpen]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -59,21 +79,65 @@ export default function Header() {
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-1 xl:flex">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-current={isActive(item.href) ? "page" : undefined}
-              className={`relative whitespace-nowrap rounded-card px-3 py-2 text-[15px] font-semibold transition-colors duration-200 hover:bg-brand/10 ${
-                isActive(item.href) ? "text-brand" : "text-black/70 hover:text-brand"
-              }`}
-            >
-              {item.label}
-              {isActive(item.href) && (
-                <span className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-accent" aria-hidden="true" />
-              )}
-            </Link>
-          ))}
+          {navMenu.map((item) => {
+            const active = item.children ? item.children.some((c) => isActive(c.href)) : isActive(item.href);
+            const linkCls = `relative whitespace-nowrap rounded-card px-3 py-2 text-[15px] font-semibold transition-colors duration-200 hover:bg-brand/10 ${
+              active ? "text-brand" : "text-black/70 hover:text-brand"
+            }`;
+            const underline = active && (
+              <span className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-accent" aria-hidden="true" />
+            );
+            if (!item.children) {
+              return (
+                <Link key={item.href} href={item.href} aria-current={active ? "page" : undefined} className={linkCls}>
+                  {item.label}
+                  {underline}
+                </Link>
+              );
+            }
+            return (
+              <div
+                key={item.label}
+                ref={dropRef}
+                className="relative"
+                onPointerEnter={(e) => e.pointerType === "mouse" && setMenuOpen(true)}
+                onPointerLeave={(e) => e.pointerType === "mouse" && setMenuOpen(false)}
+              >
+                <button
+                  type="button"
+                  aria-haspopup="true"
+                  aria-expanded={menuOpen}
+                  onClick={() => setMenuOpen((v) => !v)}
+                  className={`${linkCls} inline-flex items-center gap-1`}
+                >
+                  {item.label}
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${menuOpen ? "rotate-180" : ""}`} aria-hidden="true" />
+                  {underline}
+                </button>
+                {menuOpen && (
+                  <div className="absolute left-0 top-full z-50 min-w-[220px] pt-2">
+                    <div className="overflow-hidden rounded-card border border-black/10 bg-white shadow-lift">
+                      <ul className="p-2">
+                        {item.children.map((c) => (
+                          <li key={c.href}>
+                            <Link
+                              href={c.href}
+                              aria-current={isActive(c.href) ? "page" : undefined}
+                              className={`flex min-h-[44px] items-center rounded-card px-3 text-[15px] font-semibold transition-colors hover:bg-brand/10 ${
+                                isActive(c.href) ? "text-brand" : "text-black/70 hover:text-brand"
+                              }`}
+                            >
+                              {c.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-2">
@@ -122,19 +186,52 @@ export default function Header() {
             </button>
           </div>
           <ul className="mt-8 flex-1 space-y-1 overflow-y-auto">
-            {nav.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  aria-current={isActive(item.href) ? "page" : undefined}
-                  className={`flex min-h-[48px] items-center rounded-card px-3 text-lg font-semibold transition-colors hover:bg-snow/10 ${
-                    isActive(item.href) ? "bg-snow/10 text-accent" : "text-snow"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+            {navMenu.map((item) =>
+              item.children ? (
+                <li key={item.label}>
+                  <button
+                    type="button"
+                    aria-expanded={mobileGroup}
+                    onClick={() => setMobileGroup((v) => !v)}
+                    className={`flex min-h-[48px] w-full items-center justify-between rounded-card px-3 text-lg font-semibold transition-colors hover:bg-snow/10 ${
+                      item.children.some((c) => isActive(c.href)) ? "text-accent" : "text-snow"
+                    }`}
+                  >
+                    {item.label}
+                    <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${mobileGroup ? "rotate-180" : ""}`} aria-hidden="true" />
+                  </button>
+                  {mobileGroup && (
+                    <ul className="ml-3 mt-1 space-y-1 border-l border-snow/20 pl-3">
+                      {item.children.map((c) => (
+                        <li key={c.href}>
+                          <Link
+                            href={c.href}
+                            aria-current={isActive(c.href) ? "page" : undefined}
+                            className={`flex min-h-[44px] items-center rounded-card px-3 text-base font-semibold transition-colors hover:bg-snow/10 ${
+                              isActive(c.href) ? "bg-snow/10 text-accent" : "text-snow/90"
+                            }`}
+                          >
+                            {c.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ) : (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    aria-current={isActive(item.href) ? "page" : undefined}
+                    className={`flex min-h-[48px] items-center rounded-card px-3 text-lg font-semibold transition-colors hover:bg-snow/10 ${
+                      isActive(item.href) ? "bg-snow/10 text-accent" : "text-snow"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
           <Button href="/donate/" className="mt-6 w-full">
             Donate Now

@@ -34,12 +34,31 @@ export const site = {
 
 export const nav = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about/" },
+  { label: "About Us", href: "/about/" },
   { label: "Services", href: "/services/" },
   { label: "Learn", href: "/learn/" },
   { label: "Partner With Us", href: "/partner/" },
   { label: "Leadership", href: "/leadership/" },
   { label: "Roadmap", href: "/roadmap/" },
+  { label: "Contact", href: "/contact/" },
+];
+
+/** Header menu: "About Us" is a dropdown that groups About, Services, Leadership and Roadmap. (The footer uses the flat `nav` above.) */
+export type NavEntry = { label: string; href: string; children?: { label: string; href: string }[] };
+export const navMenu: NavEntry[] = [
+  { label: "Home", href: "/" },
+  {
+    label: "About Us",
+    href: "/about/",
+    children: [
+      { label: "Who we are", href: "/about/" },
+      { label: "Services", href: "/services/" },
+      { label: "Leadership", href: "/leadership/" },
+      { label: "Roadmap", href: "/roadmap/" },
+    ],
+  },
+  { label: "Learn", href: "/learn/" },
+  { label: "Partner With Us", href: "/partner/" },
   { label: "Contact", href: "/contact/" },
 ];
 
