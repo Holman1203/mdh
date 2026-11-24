@@ -56,3 +56,15 @@ Photos (free under the Unsplash Licence; credit is optional):
 - Young woman with headphones: <https://unsplash.com/photos/a-woman-sitting-in-front-of-a-laptop-computer-r2fZ65O6lWY>
 
 Swap in real photos of your own hub when you have them.
+
+## Mamrex Learn (free self-paced courses)
+
+- Courses and lessons live in `lib/courses.ts` (one course per pillar). Edit text there; add a lesson by copying a lesson object.
+- Sign-up, enrolment and progress use **Supabase** (free tier):
+  1. Create a project at https://supabase.com.
+  2. SQL Editor -> paste `supabase/schema.sql` -> Run (once).
+  3. Project Settings -> API: copy the Project URL and the `anon` public key into `.env.local` as
+     `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`, and add the same two variables in Vercel (Settings -> Environment Variables), then redeploy.
+  4. Authentication -> URL Configuration: set Site URL to your live address and add `https://YOUR-DOMAIN/learn/**` as a redirect URL.
+  5. See who registered and their progress in Supabase -> Table Editor -> `learner_report`.
+- Without the two keys the platform runs in **preview mode** (data saved only in the visitor's browser) and shows a notice.

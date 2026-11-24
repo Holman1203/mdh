@@ -88,3 +88,14 @@
   }
   .reveal-ready { opacity: 1; transform: none; }
 }
+
+/* Certificate: always light, and only the certificate prints */
+.certificate { background: #fff; color: #111; }
+.certificate .text-black\/70, .certificate .text-black\/60 { color: #444; }
+.certificate .text-black { color: #111; }
+@media print {
+  @page { size: A4 landscape; margin: 12mm; }
+  header, footer, .no-print, .fixed, [role="note"] { display: none !important; }
+  body, main, section { background: #fff !important; padding: 0 !important; }
+  .certificate { -webkit-print-color-adjust: exact; print-color-adjust: exact; break-inside: avoid; }
+}

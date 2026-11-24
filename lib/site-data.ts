@@ -36,6 +36,7 @@ export const nav = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about/" },
   { label: "Services", href: "/services/" },
+  { label: "Learn", href: "/learn/" },
   { label: "Partner With Us", href: "/partner/" },
   { label: "Leadership", href: "/leadership/" },
   { label: "Roadmap", href: "/roadmap/" },
@@ -51,7 +52,7 @@ export const home = {
     intro:
       "MAMREX HUB builds the dependable infrastructure, training and startup support that North-East Nigeria needs to take part fully in the digital economy.",
     primaryCta: { label: "Partner With Us", href: "/partner/" },
-    secondaryCta: { label: "Join the Academy", href: "/services/#academy" },
+    secondaryCta: { label: "Learn Free Online", href: "/learn/" },
     chips: [
       { icon: "Layers", title: "6 integrated pillars", sub: "Workspace to AI" },
       { icon: "Target", title: "SDG 4 · 5 · 8 · 9 · 17", sub: "Aligned impact goals" },
@@ -1001,7 +1002,7 @@ export const heroSlides: {
     headline: "Build on Strength",
     subtitle: "Technology, skills and enterprise for Nigeria's next generation of innovators.",
     primary: { label: "Partner With Us", href: "/partner/" },
-    secondary: { label: "Join the Academy", href: "/services/#academy" },
+    secondary: { label: "Learn Free Online", href: "/learn/" },
   },
   {
     src: "/hero/hero-man.webp",
@@ -1009,7 +1010,7 @@ export const heroSlides: {
     alt: "A smiling young Nigerian man holding a laptop",
     headline: "Build Skills",
     subtitle: "Practical, project-based training that prepares young people for real work in the digital economy.",
-    primary: { label: "Join the Academy", href: "/services/#academy" },
+    primary: { label: "Learn Free Online", href: "/learn/" },
     secondary: { label: "See our programmes", href: "/#programmes" },
   },
   {
@@ -1018,7 +1019,7 @@ export const heroSlides: {
     alt: "School pupils learning in a classroom in Lagos, Nigeria",
     headline: "Close the Gap",
     subtitle: "Bridging the distance between formal education and the skills the digital economy demands.",
-    primary: { label: "Join the Academy", href: "/services/#academy" },
+    primary: { label: "Learn Free Online", href: "/learn/" },
     secondary: { label: "Partner With Us", href: "/partner/" },
   },
   {
