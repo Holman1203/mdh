@@ -36,7 +36,7 @@ export default function RoadmapPage() {
                 <h2 className="mt-2 font-heading text-4xl font-bold text-brand">
                   {p.phase} — {p.name}
                 </h2>
-                <p className="mt-1 font-semibold text-black/70">{p.goal}</p>
+                {p.goal && <p className="mt-1 font-semibold text-black/70">{p.goal}</p>}
                 <ul className="mt-4 space-y-2 text-black/80">
                   {p.items.map((it) => (
                     <li key={it} className="flex gap-2">
@@ -49,6 +49,14 @@ export default function RoadmapPage() {
             </li>
           ))}
         </ol>
+      </Section>
+
+      <Section tone="tint">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="font-heading text-5xl font-bold text-brand">{roadmap.gate.title}</h2>
+          <p className="mt-4 text-lg leading-relaxed text-black/80">{roadmap.gate.text}</p>
+          <p className="mt-4 text-sm text-black/70">{roadmap.gate.note}</p>
+        </div>
       </Section>
 
       <PartnerCtaBand />

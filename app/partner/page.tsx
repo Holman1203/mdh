@@ -61,22 +61,7 @@ export default function PartnerPage() {
         </div>
       </Section>
 
-      <Section tone="tint" id="sustainability">
-        <SectionHeading
-          eyebrow={partner.sustainability.eyebrow}
-          title={partner.sustainability.title}
-          intro={partner.sustainability.intro}
-        />
-        <div className="mt-10">
-          <ResponsiveTable
-            headers={partner.sustainability.headers}
-            rows={partner.sustainability.rows}
-            caption="Revenue streams and their role in the model"
-          />
-        </div>
-      </Section>
-
-      <Section>
+      <Section tone="tint">
         <div className="rounded-tile bg-navy px-6 py-12 text-center sm:px-12">
           <h2 className="font-heading text-5xl font-bold text-snow">Start a conversation</h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-snow/80">

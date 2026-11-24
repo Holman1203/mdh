@@ -31,9 +31,9 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
   }, [value]);
 
   return (
-    <span ref={ref} aria-label={`${value}${suffix}`}>
+    <span ref={ref} aria-label={`${value.toLocaleString("en-GB")}${suffix}`}>
       <span aria-hidden="true">
-        {shown}
+        {shown.toLocaleString("en-GB")}
         {suffix}
       </span>
     </span>

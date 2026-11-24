@@ -54,7 +54,7 @@ export const home = {
     secondaryCta: { label: "Join the Academy", href: "/services/#academy" },
     chips: [
       { icon: "Layers", title: "6 integrated pillars", sub: "Workspace to AI" },
-      { icon: "Target", title: "SDG 4 · 8 · 9 · 17", sub: "Aligned impact goals" },
+      { icon: "Target", title: "SDG 4 · 5 · 8 · 9 · 17", sub: "Aligned impact goals" },
     ],
   },
   stats: [
@@ -126,9 +126,8 @@ export const pillars = [
     serves:
       "Entrepreneurs, freelancers, remote teams and small organisations that would otherwise struggle with inconsistent power and internet.",
     delivers: [
-      "Co-working desks and private spaces",
-      "Reliable power and high-quality internet",
-      "Meeting and collaboration areas",
+      "Co-working desks, private offices, meeting and training rooms",
+      "Solar-hybrid power with battery back-up and two independent internet links",
       "Flexible membership options",
     ],
     outcomes:
@@ -147,7 +146,8 @@ export const pillars = [
     delivers: [
       "Structured, practical programmes built around hands-on projects",
       "Industry-aligned curricula",
-      "Planned tracks: web and software development, design, digital marketing, and networking and IT support",
+      "Planned tracks: software and web development, UI/UX and graphic design, digital marketing, networking and IT support, data, cybersecurity and AI tools",
+      "12–16 week tracks with assessments, capstone projects and portfolio reviews",
     ],
     outcomes:
       "Graduates prepared for real employment, freelance work or venture-building, with portfolios that demonstrate their skills.",
@@ -286,6 +286,7 @@ export const whyChoose = [
 
 export const sdgs = [
   { number: 4, name: "Quality Education" },
+  { number: 5, name: "Gender Equality" },
   { number: 8, name: "Decent Work and Economic Growth" },
   { number: 9, name: "Industry, Innovation and Infrastructure" },
   { number: 17, name: "Partnerships for the Goals" },
@@ -621,7 +622,7 @@ export const partner = {
     eyebrow: "Impact & measurement",
     title: "What we will track and report",
     intro:
-      "We align our work with SDG 4 (Quality Education), SDG 8 (Decent Work and Economic Growth), SDG 9 (Industry, Innovation and Infrastructure) and SDG 17 (Partnerships for the Goals). As a new organisation we will establish baselines in our first year and report against the following indicators.",
+      "We align our work with SDG 4 (Quality Education), SDG 5 (Gender Equality), SDG 8 (Decent Work and Economic Growth), SDG 9 (Industry, Innovation and Infrastructure) and SDG 17 (Partnerships for the Goals). As a new organisation we will establish baselines in our first year and report against the following indicators.",
     headers: ["Area", "Indicators we will track and report"],
     rows: [
       [
@@ -640,29 +641,6 @@ export const partner = {
       [
         "Ecosystem",
         "Events and hackathons held; participants reached; partnerships formed.",
-      ],
-    ],
-  },
-  sustainability: {
-    eyebrow: "Sustainability",
-    title: "Earned income alongside partner funding",
-    intro:
-      "MAMREX HUB is designed to combine earned income with partner funding, so that grants accelerate impact rather than create dependency.",
-    headers: ["Revenue stream", "Role in the model"],
-    rows: [
-      ["Workspace memberships", "Recurring income from co-working members, covering core operating costs."],
-      [
-        "Mamrex Connect contracts",
-        "Enterprise internet and IT support agreements with businesses, schools, NGOs and government offices.",
-      ],
-      ["Digital services", "Project-based software, branding, marketing and hardware income."],
-      [
-        "Training fees and sponsorship",
-        "Paying cohorts, with sponsored and subsidised places for disadvantaged learners funded by partners.",
-      ],
-      [
-        "Grants and partner funding",
-        "Programme funding for training, incubation, equipment and expansion.",
       ],
     ],
   },
@@ -737,52 +715,86 @@ export const roadmap = {
   meta: {
     title: "Roadmap",
     description:
-      "Our indicative three-phase plan: Establish, Grow and Scale, from a lean foundation to a regional model.",
+      "Our indicative 2026–2030 roadmap: Establish, Build, Grow, Scale and Lead, from a foundation in Maiduguri to a regional platform.",
   },
   hero: {
-    eyebrow: "Strategic direction",
-    title: "From a lean, revenue-generating foundation to a scalable regional model",
-    intro: "Our indicative plan builds in three phases over 36 months.",
+    eyebrow: "Strategic plan 2026–2030",
+    title: "From foundation to regional platform in five phases",
+    intro:
+      "Our indicative roadmap runs from incorporation in October 2026 to three hubs by 2030, built around five pillars and one simple idea: build on strength.",
   },
   phases: [
     {
       phase: "Phase 1",
       name: "Establish",
-      time: "0–6 months",
-      goal: "Build the foundation and start earning",
+      time: "Q4 2026",
+      goal: "",
       items: [
-        "Secure and fit out hub premises with reliable power and internet",
-        "Launch digital services and Mamrex Connect",
-        "Pilot the first Academy cohort",
-        "Set up banking, policies and an advisory board",
+        "Corporate bank account and financial controls",
+        "Core policies adopted",
+        "Premises secured and fit-out begun",
+        "Digital services trading",
+        "Website relaunched and 3MTT outreach",
       ],
     },
     {
       phase: "Phase 2",
-      name: "Grow",
-      time: "6–18 months",
-      goal: "Deliver the full programme model",
+      name: "Build",
+      time: "2027",
+      goal: "",
       items: [
-        "Open Workspace memberships fully",
-        "Run multiple Academy tracks",
-        "Launch the first Ventures cohort",
-        "Hold regular Community events and hackathons",
-        "Deliver first partner-funded programmes",
+        "Hub opens with solar-hybrid power and dual internet",
+        "Workspace memberships launched",
+        "Academy cohorts: 300 learners",
+        "First Connect clients",
+        "Advisory board and M&E baseline",
       ],
     },
     {
       phase: "Phase 3",
-      name: "Scale",
-      time: "18–36 months",
-      goal: "Replicate and expand",
+      name: "Grow",
+      time: "2028",
+      goal: "",
       items: [
-        "Open satellite hubs with local partners",
-        "Expand Connect to more institutions",
-        "Build an alumni and investor network",
-        "Begin expansion across Africa",
+        "Multiple Academy tracks and certifications",
+        "First Ventures cohort",
+        "Annual innovation summit",
+        "Core hub operations break even",
+        "External audit and mid-term review",
+      ],
+    },
+    {
+      phase: "Phase 4",
+      name: "Scale",
+      time: "2029",
+      goal: "",
+      items: [
+        "Satellite hub in the North-East",
+        "Blended and online Academy",
+        "Two Ventures cohorts a year",
+        "Alumni and investor network",
+        "Three-month operating reserve",
+      ],
+    },
+    {
+      phase: "Phase 5",
+      name: "Lead",
+      time: "2030",
+      goal: "",
+      items: [
+        "Three hubs operating",
+        "First partnership beyond Nigeria",
+        "About 60% of income earned",
+        "End-of-plan evaluation",
+        "Strategic Plan 2031–2035",
       ],
     },
   ],
+  gate: {
+    title: "Phase gate",
+    text: "Each phase's milestones must be substantially met before the next phase's main investments are released. Reliability first, then revenue, then replication: every expansion is earned by the results of the phase before it.",
+    note: "The roadmap is indicative and will be reviewed at mid-term (end of 2028).",
+  },
 };
 
 /* ---------------------------------- CONTACT -------------------------------- */
@@ -820,27 +832,30 @@ export const contact = {
 export const trustItems = [
   { icon: "ShieldCheck", title: "CAC registered", sub: "RC 9921354 · Status: Active" },
   { icon: "FileCheck", title: "NDPA 2023 aligned", sub: "Data protection approach" },
-  { icon: "Target", title: "SDG 4 · 8 · 9 · 17", sub: "Aligned impact goals" },
+  { icon: "Target", title: "SDG 4 · 5 · 8 · 9 · 17", sub: "Aligned impact goals" },
   { icon: "MapPin", title: "Maiduguri, Nigeria", sub: "Expanding across Africa" },
 ];
 
 /**
- * Animated counters. These are real facts from the profile (the company was incorporated in October 2026,
- * so there are no "people trained" or "clients served" results yet).
- * When you have real results, add them here, e.g. { value: 120, suffix: "+", label: "People trained" }.
+ * COUNTERS — the 2030 targets from the Strategic Plan 2026–2030. These are targets, not results to date
+ * (the company was incorporated in October 2026). When real results exist, add or replace tiles here.
  */
 export const impactNumbers = [
-  { value: 6, suffix: "", label: "Integrated pillars" },
-  { value: 4, suffix: "", label: "Digital service lines" },
-  { value: 4, suffix: "", label: "Planned Academy tracks" },
-  { value: 36, suffix: "", label: "Month roadmap to regional scale" },
+  { value: 3000, suffix: "", label: "Learners trained by 2030" },
+  { value: 400, suffix: "", label: "Active workspace members by 2030" },
+  { value: 60, suffix: "", label: "Startups incubated by 2030" },
+  { value: 100, suffix: "", label: "Institutions connected or supported by 2030" },
+  { value: 40, suffix: "%", label: "Women among our learners (at least)" },
+  { value: 3, suffix: "", label: "Hubs operating by 2030" },
+  { value: 60, suffix: "%", label: "Graduates in work within six months (at least)" },
+  { value: 60, suffix: "%", label: "Share of income earned by 2030 (about)" },
 ];
 
 export const impactCopy = {
-  eyebrow: "Our foundation in numbers",
-  title: "Built to scale from day one",
+  eyebrow: "Our 2030 targets",
+  title: "Where we are building to",
   intro:
-    "MAMREX HUB is newly established, so we report what is real today and will publish results against our indicators as programmes run.",
+    "MAMREX HUB is newly established. These are the targets in our 2026–2030 Strategic Plan, not results to date. We will report against them as our programmes run.",
 };
 
 export const valuesIntro = {
@@ -861,7 +876,7 @@ export const programmes = [
   {
     category: "Academy",
     icon: "Palette",
-    title: "Design",
+    title: "UI/UX and graphic design",
     text: "Hands-on design training aligned to what the digital economy actually asks for.",
   },
   {
@@ -875,6 +890,12 @@ export const programmes = [
     icon: "Network",
     title: "Networking and IT support",
     text: "Job-ready networking and IT support skills, also available as training for NGO and institutional staff on request.",
+  },
+  {
+    category: "Academy",
+    icon: "BrainCircuit",
+    title: "Data, cybersecurity and AI tools",
+    text: "Planned tracks in data, cybersecurity and practical AI tools, reviewed every year with employers.",
   },
   {
     category: "Ventures",
