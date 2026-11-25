@@ -51,6 +51,7 @@ const config: Config = {
         scanX: { "0%": { transform: "translateX(-100%)", opacity: "0" }, "12%": { opacity: "1" }, "88%": { opacity: "1" }, "100%": { transform: "translateX(300%)", opacity: "0" } },
         netDrift: { from: { transform: "translate(0,0)" }, to: { transform: "translate(-18px,12px)" } },
         twinkle: { "0%,100%": { opacity: "0.25" }, "50%": { opacity: "0.9" } },
+        zoomIn: { from: { transform: "scale(1)" }, to: { transform: "scale(1.2)" } },
         kenburns: { from: { transform: "scale(1.02) translate(0,0)" }, to: { transform: "scale(1.12) translate(-1.5%,-1%)" } },
         float: { from: { transform: "translateY(0)" }, to: { transform: "translateY(-12px)" } },
         drift: { from: { transform: "translate(0,0) scale(1)" }, to: { transform: "translate(60px,-40px) scale(1.15)" } },
@@ -59,6 +60,7 @@ const config: Config = {
       animation: {
         "fade-up": "fade-up 0.6s ease-out both",
         float: "float 6s ease-in-out infinite alternate",
+        "zoom-in": "zoomIn 10s linear forwards",
         kenburns: "kenburns 26s ease-in-out infinite alternate",
         "scan-y": "scanY 16s linear infinite",
         "scan-y-slow": "scanY 24s linear infinite",

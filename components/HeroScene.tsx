@@ -7,12 +7,14 @@ import Button from "./Button";
 import HeroNetwork from "./HeroNetwork";
 import { heroSlides, heroWelcome } from "@/lib/site-data";
 
-const INTERVAL = 8000; // time each slide is shown
+const INTERVAL = 9000; // time each slide is shown
+const FADE = 1800; // cross-fade between slides
+const ZOOM = INTERVAL + FADE; // each photo zooms in slowly for its whole time on screen, until it has faded out
 
 /**
  * Hero with a calm, video-like background and content that changes with it:
  *  - African / Nigerian photos fade slowly into each other on their own (no mouse or touch interaction),
- *    each drifting very slowly like gentle camera movement.
+ *    Each photo starts from its normal size when it appears and zooms in slowly until it is replaced by the next one.
  *  - The headline, subtitle and both buttons change together with the photo.
  *  - Buttons sit at the bottom of the hero. A small pause button and progress dots are provided.
  *  - Only the first photo loads up front; the rest load a moment later (kind to slow networks).
@@ -20,6 +22,7 @@ const INTERVAL = 8000; // time each slide is shown
  */
 export default function HeroScene() {
   const [index, setIndex] = useState(0);
+  const [prev, setPrev] = useState<number | null>(null); // the photo that is fading out keeps its zoom until it is gone
   const [playing, setPlaying] = useState(true);
   const [ready, setReady] = useState(false); // other photos mount shortly after first paint
   const slide = heroSlides[index];
@@ -31,11 +34,18 @@ export default function HeroScene() {
     return () => clearTimeout(t);
   }, []);
 
+  const go = (next: number) => {
+    if (next === index) return;
+    setPrev(index);
+    setIndex(next);
+  };
+
   useEffect(() => {
-    if (!playing || !ready) return;
-    const t = setTimeout(() => setIndex((i) => (i + 1) % heroSlides.length), INTERVAL);
+    if (!playing) return;
+    const t = setTimeout(() => go((index + 1) % heroSlides.length), INTERVAL);
     return () => clearTimeout(t); // restarts after every change, including manual jumps
-  }, [playing, ready, index]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [playing, index]);
 
   return (
     <div className="on-navy relative isolate flex min-h-[calc(100svh-5rem)] overflow-hidden bg-navy">
@@ -51,10 +61,15 @@ export default function HeroScene() {
               fill
               priority={i === 0}
               sizes="100vw"
-              style={{ objectPosition: s.pos }}
-              className={`animate-kenburns object-cover transition-opacity duration-[1800ms] ease-in-out ${
-                i === index ? "opacity-100" : "opacity-0"
-              }`}
+              style={{
+                objectPosition: s.pos,
+                animationDuration: `${ZOOM}ms`,
+                animationPlayState: playing ? "running" : "paused",
+                transitionDuration: `${FADE}ms`,
+              }}
+              className={`object-cover transition-opacity ease-in-out ${
+                i === index || i === prev ? "animate-zoom-in" : ""
+              } ${i === index ? "opacity-100" : "opacity-0"}`}
             />
           );
         })}
@@ -101,7 +116,7 @@ export default function HeroScene() {
               <button
                 key={s.src}
                 type="button"
-                onClick={() => setIndex(i)}
+                onClick={() => go(i)}
                 aria-label={`Show slide ${i + 1} of ${heroSlides.length}: ${s.headline}`}
                 aria-current={i === index}
                 className="flex h-11 w-7 items-center justify-center"
