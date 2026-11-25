@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ArrowRight, Pause, Play } from "lucide-react";
 import Button from "./Button";
-import HeroLines from "./HeroLines";
+import HeroNetwork from "./HeroNetwork";
 import { heroSlides, heroWelcome } from "@/lib/site-data";
 
 const INTERVAL = 8000; // time each slide is shown
@@ -63,7 +63,7 @@ export default function HeroScene() {
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/85 to-navy/35" aria-hidden="true" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-navy/80 via-transparent to-transparent" aria-hidden="true" />
 
-      <HeroLines />
+      <HeroNetwork />
 
       <div className="mx-auto flex w-full max-w-6xl flex-col px-4 pb-8 pt-14 sm:px-6 sm:pb-10 sm:pt-20 lg:px-8">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-accent sm:text-base">{heroWelcome}</p>
